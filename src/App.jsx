@@ -35,20 +35,19 @@ function App() {
       
       <main className="flex-grow flex flex-col">
         <Hero />
-        <QuickInquiryBar />
         <TrustStrip />
-        <LocalTrust />
+        <QuickInquiryBar />
         <FeaturedWork />
         <Services />
         <IndustriesWeServe />
         <WhyChooseUs />
         <ComparisonSection />
         <About />
+        <ResultsImpact />
         <PrintingShowcase />
         <CaseStudies />
         <DigitalPortfolio />
         <Process />
-        <ResultsImpact />
         <Reviews />
         <Solutions />
         <FAQ />

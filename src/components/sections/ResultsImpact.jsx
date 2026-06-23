@@ -12,7 +12,7 @@ export function ResultsImpact() {
     <section className="py-24 bg-primary text-white relative overflow-hidden">
       <div className="container-premium relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-outfit font-bold mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-outfit font-bold mb-6 leading-tight text-white">
             Client Success <span className="text-accent">Metrics</span>
           </h2>
           <p className="font-inter text-blue-100 text-lg max-w-2xl mx-auto">
