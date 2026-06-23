@@ -121,35 +121,6 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* ── Right Column (Only for Floating Badges over the background image) ── */}
-          <div className="col-span-12 lg:col-span-5 relative min-h-[150px] lg:min-h-[300px] w-full flex items-center justify-center lg:justify-end">
-            {/* Floating badge 1 — Top Left of this region */}
-            <motion.div
-              animate={{ y: [-8, 8, -8] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute top-4 left-4 lg:top-12 lg:left-0 z-20 bg-white/85 backdrop-blur-md px-5 py-3.5 rounded-2xl shadow-xl border border-white/40 flex items-center gap-3 hover:scale-105 transition-transform duration-300 pointer-events-auto"
-            >
-              <span className="text-2xl drop-shadow-sm">💻</span>
-              <div>
-                <p className="font-outfit font-bold text-[#111827] text-sm leading-none">Website Design</p>
-                <p className="font-inter text-[11px] text-[#4B5563] mt-1 font-medium">Modern &amp; Responsive</p>
-              </div>
-            </motion.div>
-
-            {/* Floating badge 2 — Bottom Right of this region */}
-            <motion.div
-              animate={{ y: [8, -8, 8] }}
-              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-              className="absolute bottom-4 right-4 lg:bottom-16 lg:right-4 z-20 bg-white/85 backdrop-blur-md px-5 py-3.5 rounded-2xl shadow-xl border border-white/40 flex items-center gap-3 hover:scale-105 transition-transform duration-300 pointer-events-auto"
-            >
-              <span className="text-2xl drop-shadow-sm">🖨️</span>
-              <div>
-                <p className="font-outfit font-bold text-[#111827] text-sm leading-none">Premium Printing</p>
-                <p className="font-inter text-[11px] text-[#4B5563] mt-1 font-medium">Fast &amp; High Quality</p>
-              </div>
-            </motion.div>
-          </div>
-
         </div>
       </div>
     </section>
