@@ -11,13 +11,25 @@ const stats = [
 ];
 
 const fadeLeft = { initial: { opacity: 0, x: -40 }, animate: { opacity: 1, x: 0 } };
-const fadeRight = { initial: { opacity: 0, x: 40 }, animate: { opacity: 1, x: 0 } };
 
 export function Hero() {
   return (
-    <section className="relative bg-white overflow-hidden pt-8 pb-0">
-      <div className="container-premium">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-6 items-center min-h-[520px]">
+    <section className="relative overflow-hidden pt-6 pb-10 lg:pt-10 lg:pb-12 min-h-[480px] lg:min-h-[520px] flex items-center bg-[#FAFBFC]">
+      {/* ── Background Layer (Uncontained Image) ── */}
+      <div className="absolute inset-0 z-0 select-none pointer-events-none">
+        <motion.img
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          src="/hero-printing.png"
+          alt="LaunchLite printing studio background"
+          className="w-full h-full object-cover object-center lg:object-right"
+          loading="eager"
+        />
+      </div>
+
+      <div className="container-premium relative z-10 w-full">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-6 items-center">
 
           {/* ── Left Content ── */}
           <motion.div
@@ -25,7 +37,7 @@ export function Hero() {
             initial="initial"
             animate="animate"
             transition={{ duration: 0.65, ease: "easeOut" }}
-            className="flex flex-col gap-5 pb-12 lg:pb-16"
+            className="col-span-12 lg:col-span-7 flex flex-col gap-5 pb-4 lg:pb-0"
           >
             {/* Eyebrow */}
             <p className="font-outfit font-bold text-[#EA580C] text-sm tracking-widest uppercase">
@@ -40,7 +52,7 @@ export function Hero() {
             </h1>
 
             {/* Subtext */}
-            <p className="font-inter text-[#4B5563] text-base md:text-lg leading-relaxed max-w-[480px]">
+            <p className="font-inter text-[#4B5563] text-base md:text-lg leading-relaxed max-w-[500px]">
               Websites, Branding, Digital Marketing, Printing &amp; More{" "}
               <span className="text-[#111827] font-medium">– All Under One Roof.</span>
             </p>
@@ -82,7 +94,7 @@ export function Hero() {
             </div>
 
             {/* Stat Badges */}
-            <div className="flex flex-wrap gap-5 pt-3 border-t border-slate-100 mt-2">
+            <div className="flex flex-wrap gap-5 pt-3 border-t border-slate-200/60 mt-2">
               {stats.map((stat, i) => (
                 <motion.div
                   key={i}
@@ -91,7 +103,7 @@ export function Hero() {
                   transition={{ delay: 0.4 + i * 0.1, duration: 0.4 }}
                   className="flex items-center gap-2.5 group"
                 >
-                  <div className="w-9 h-9 rounded-full border border-slate-200 bg-slate-50 flex items-center justify-center group-hover:border-orange-300 group-hover:bg-orange-50 transition-colors">
+                  <div className="w-9 h-9 rounded-full border border-slate-200 bg-white/80 backdrop-blur-sm flex items-center justify-center group-hover:border-orange-300 group-hover:bg-orange-50 transition-colors">
                     <stat.icon
                       size={16}
                       className="text-slate-500 group-hover:text-[#EA580C] transition-colors"
@@ -109,58 +121,35 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* ── Right Hero Image ── */}
-          <motion.div
-            variants={fadeRight}
-            initial="initial"
-            animate="animate"
-            transition={{ duration: 0.75, ease: "easeOut", delay: 0.15 }}
-            className="relative h-[420px] md:h-[500px] lg:h-[560px] w-full hidden sm:block"
-          >
-            {/* Subtle background blob */}
-            <div className="absolute inset-0 -z-0">
-              <div className="absolute top-8 right-8 w-72 h-72 bg-orange-50 rounded-full blur-3xl opacity-60" />
-              <div className="absolute bottom-8 left-4 w-56 h-56 bg-blue-50 rounded-full blur-3xl opacity-50" />
-            </div>
-
-            {/* Hero Image */}
-            <div className="relative z-10 h-full w-full rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="/hero-printing.png"
-                alt="LaunchLite printing studio — large-format printer, branded materials, and computer"
-                className="w-full h-full object-cover object-center"
-                loading="eager"
-              />
-              {/* Subtle gradient overlay at bottom for clean edge */}
-              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white/30 to-transparent" />
-            </div>
-
-            {/* Floating badge — top-left */}
+          {/* ── Right Column (Only for Floating Badges over the background image) ── */}
+          <div className="col-span-12 lg:col-span-5 relative min-h-[150px] lg:min-h-[300px] w-full flex items-center justify-center lg:justify-end">
+            {/* Floating badge 1 — Top Left of this region */}
             <motion.div
-              animate={{ y: [-6, 6, -6] }}
+              animate={{ y: [-8, 8, -8] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute top-6 -left-4 z-20 bg-white px-4 py-2.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2"
+              className="absolute top-4 left-4 lg:top-12 lg:left-0 z-20 bg-white/85 backdrop-blur-md px-5 py-3.5 rounded-2xl shadow-xl border border-white/40 flex items-center gap-3 hover:scale-105 transition-transform duration-300 pointer-events-auto"
             >
-              <span className="text-lg">💻</span>
+              <span className="text-2xl drop-shadow-sm">💻</span>
               <div>
-                <p className="font-outfit font-bold text-[#111827] text-xs leading-none">Website Design</p>
-                <p className="font-inter text-[10px] text-[#64748B] mt-0.5">Modern &amp; Responsive</p>
+                <p className="font-outfit font-bold text-[#111827] text-sm leading-none">Website Design</p>
+                <p className="font-inter text-[11px] text-[#4B5563] mt-1 font-medium">Modern &amp; Responsive</p>
               </div>
             </motion.div>
 
-            {/* Floating badge — bottom-right */}
+            {/* Floating badge 2 — Bottom Right of this region */}
             <motion.div
-              animate={{ y: [6, -6, 6] }}
+              animate={{ y: [8, -8, 8] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-              className="absolute bottom-8 -right-4 z-20 bg-white px-4 py-2.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2"
+              className="absolute bottom-4 right-4 lg:bottom-16 lg:right-4 z-20 bg-white/85 backdrop-blur-md px-5 py-3.5 rounded-2xl shadow-xl border border-white/40 flex items-center gap-3 hover:scale-105 transition-transform duration-300 pointer-events-auto"
             >
-              <span className="text-lg">🖨️</span>
+              <span className="text-2xl drop-shadow-sm">🖨️</span>
               <div>
-                <p className="font-outfit font-bold text-[#111827] text-xs leading-none">Premium Printing</p>
-                <p className="font-inter text-[10px] text-[#64748B] mt-0.5">Fast &amp; High Quality</p>
+                <p className="font-outfit font-bold text-[#111827] text-sm leading-none">Premium Printing</p>
+                <p className="font-inter text-[11px] text-[#4B5563] mt-1 font-medium">Fast &amp; High Quality</p>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
+
         </div>
       </div>
     </section>
