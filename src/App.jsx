@@ -39,11 +39,11 @@ function App() {
         <QuickInquiryBar />
         <FeaturedWork />
         <Services />
-        <IndustriesWeServe />
         <WhyChooseUs />
         <ComparisonSection />
         <About />
         <ResultsImpact />
+        <IndustriesWeServe />
         <PrintingShowcase />
         <CaseStudies />
         <DigitalPortfolio />

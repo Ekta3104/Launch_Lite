@@ -2,20 +2,108 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Store, Utensils, GraduationCap, Stethoscope, Rocket, Briefcase, ShoppingBag, CalendarHeart } from "lucide-react";
 
+const WA_CONTACT = "https://wa.me/917350583530?text=Hello%20Launchlite%2C%20I%20want%20to%20discuss%20solutions%20for%20my%20business.";
+
+const CheckIcon = () => (
+  <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+  </svg>
+);
+
 export function IndustriesWeServe() {
   const industries = [
-    { icon: Store, title: "Retail Stores", desc: "E-commerce websites and engaging branding materials to boost offline and online sales." },
-    { icon: Utensils, title: "Restaurants", desc: "Food delivery apps, menu designs, and captivating social media creatives." },
-    { icon: GraduationCap, title: "Educational Institutes", desc: "Management systems, modern websites, and admission brochures." },
-    { icon: Stethoscope, title: "Medical Clinics", desc: "Appointment booking systems, patient portals, and clinic branding." },
-    { icon: Rocket, title: "Startups", desc: "End-to-end digital solutions from MVP apps to complete brand identity." },
-    { icon: Briefcase, title: "Small Businesses", desc: "Affordable websites and high-quality printing for professional presence." },
-    { icon: CalendarHeart, title: "Event Organizers", desc: "Premium invitation cards, flex banners, and event landing pages." },
-    { icon: ShoppingBag, title: "E-Commerce", desc: "Scalable online stores with seamless payment integrations." }
+    {
+      icon: Store,
+      title: "Retail Stores",
+      desc: "Boost your retail sales with engaging branding and robust online storefronts.",
+      image: "/service-branding.png",
+      features: ["E-Commerce Sites", "Product Packaging", "Flyers & Posters", "Store Branding"],
+      bgColor: "bg-indigo-50",
+      iconColor: "text-indigo-600",
+      checkColor: "bg-indigo-500",
+      buttonColor: "text-indigo-600 hover:text-indigo-700",
+    },
+    {
+      icon: Utensils,
+      title: "Restaurants",
+      desc: "Increase orders with digital menu systems, reservation apps, and visual prints.",
+      image: "/service-brochure.png",
+      features: ["Digital Menus", "Order Web Apps", "Social Creatives", "Branded Packaging"],
+      bgColor: "bg-rose-50",
+      iconColor: "text-rose-600",
+      checkColor: "bg-rose-500",
+      buttonColor: "text-rose-600 hover:text-rose-700",
+    },
+    {
+      icon: GraduationCap,
+      title: "Educational Institutes",
+      desc: "Modernize enrollment with prospectus brochures, banner displays, and school portals.",
+      image: "/service-design.png",
+      features: ["School Websites", "Student Portals", "Admission Packets", "Banner Displays"],
+      bgColor: "bg-sky-50",
+      iconColor: "text-sky-600",
+      checkColor: "bg-sky-500",
+      buttonColor: "text-sky-600 hover:text-sky-700",
+    },
+    {
+      icon: Stethoscope,
+      title: "Medical Clinics",
+      desc: "Improve patient experience with booking portals, clinic sites, and custom materials.",
+      image: "/service-webdev.png",
+      features: ["Booking Portals", "Clinic Websites", "Patient Forms", "Professional Cards"],
+      bgColor: "bg-blue-50",
+      iconColor: "text-blue-600",
+      checkColor: "bg-blue-500",
+      buttonColor: "text-blue-600 hover:text-blue-700",
+    },
+    {
+      icon: Rocket,
+      title: "Startups",
+      desc: "Scale fast with high-performance SaaS landing pages, MVPs, and modern brand assets.",
+      image: "/about-studio.png",
+      features: ["MVP Development", "SaaS Landing Pages", "Pitch Decks", "Modern Branding"],
+      bgColor: "bg-purple-50",
+      iconColor: "text-purple-600",
+      checkColor: "bg-purple-500",
+      buttonColor: "text-purple-600 hover:text-purple-700",
+    },
+    {
+      icon: Briefcase,
+      title: "Small Businesses",
+      desc: "Grow your local footprint with SEO optimized websites and tactile visiting cards.",
+      image: "/service-visiting.png",
+      features: ["Local SEO Sites", "Visiting Cards", "Flyer Campaigns", "Logo Creation"],
+      bgColor: "bg-orange-50",
+      iconColor: "text-orange-600",
+      checkColor: "bg-orange-500",
+      buttonColor: "text-orange-600 hover:text-orange-700",
+    },
+    {
+      icon: CalendarHeart,
+      title: "Event Organizers",
+      desc: "Draw crowds with premium invitations, flex banners, and event landing pages.",
+      image: "/service-flex.png",
+      features: ["Invitation Cards", "Flex & Banners", "Event Websites", "Lanyard & Badges"],
+      bgColor: "bg-emerald-50",
+      iconColor: "text-emerald-600",
+      checkColor: "bg-emerald-500",
+      buttonColor: "text-[#16A34A] hover:text-emerald-700",
+    },
+    {
+      icon: ShoppingBag,
+      title: "E-Commerce",
+      desc: "Sell 24/7 with smooth shopping carts, payment APIs, and social marketing ads.",
+      image: "/service-social.png",
+      features: ["Online Storefronts", "Payment Setups", "Social Media Ads", "Invoice Layouts"],
+      bgColor: "bg-amber-50",
+      iconColor: "text-amber-500",
+      checkColor: "bg-amber-500",
+      buttonColor: "text-amber-500 hover:text-amber-600",
+    },
   ];
 
   return (
-    <section className="bg-slate-50 section-padding border-y border-borderLight">
+    <section id="industries" className="bg-slate-50/50 py-24 border-y border-slate-200/50">
       <div className="container-premium">
         <SectionHeading 
           badge="Who We Help"
@@ -23,23 +111,82 @@ export function IndustriesWeServe() {
           subtitle="We craft tailored digital and printing solutions that meet the unique demands of various business sectors."
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          {industries.map((industry, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-white p-6 rounded-premium border border-borderLight shadow-sm hover:shadow-premium transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="w-12 h-12 bg-blue-50 text-secondary rounded-xl flex items-center justify-center mb-4">
-                <industry.icon size={24} strokeWidth={1.5} />
-              </div>
-              <h4 className="font-outfit font-bold text-heading text-lg mb-2">{industry.title}</h4>
-              <p className="font-inter text-body text-sm leading-relaxed">{industry.desc}</p>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          {industries.map((industry, i) => {
+            const Icon = industry.icon;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="bg-white rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgb(0,0,0,0.01)] p-6 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+              >
+                <div>
+                  {/* Top-Left Square Icon */}
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${industry.bgColor}`}>
+                    <Icon className={`${industry.iconColor}`} size={22} strokeWidth={2} />
+                  </div>
+
+                  {/* Product Showcase Image Mockup */}
+                  <div className="my-5 rounded-2xl overflow-hidden border border-slate-100 aspect-[4/3] bg-slate-50 relative shadow-sm group-hover:shadow-md transition-all duration-300">
+                    <img
+                      src={industry.image}
+                      alt={industry.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="font-outfit font-extrabold text-[#111827] text-lg text-center mb-2 leading-tight">
+                    {industry.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="font-inter text-[#64748B] text-xs text-center leading-relaxed mb-6 px-1">
+                    {industry.desc}
+                  </p>
+
+                  {/* Features 2x2 Grid Checklist */}
+                  <div className="grid grid-cols-2 gap-x-2 gap-y-3 mb-6 px-1">
+                    {industry.features.map((feat, idx) => (
+                      <div key={idx} className="flex items-center gap-1.5 min-w-0">
+                        <span className={`w-4 h-4 rounded-full flex items-center justify-center text-white shrink-0 ${industry.checkColor}`}>
+                          <CheckIcon />
+                        </span>
+                        <span className="font-inter text-[10.5px] font-extrabold text-[#4B5563] truncate">
+                          {feat}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Bottom Action Button */}
+                <div className="text-center pt-3 border-t border-slate-100">
+                  <a
+                    href={WA_CONTACT}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`inline-flex items-center justify-center gap-1.5 font-outfit font-extrabold text-xs transition-transform duration-300 ${industry.buttonColor}`}
+                  >
+                    <span>Explore Solutions</span>
+                    <svg
+                      className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

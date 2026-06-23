@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PenTool, Globe, Megaphone, Tag, Contact, Presentation, Map, Printer, Monitor } from "lucide-react";
+import { SectionHeading } from "../ui/SectionHeading";
 
 const WA_SERVICE = "https://wa.me/917350583530?text=Hello%20Launchlite%2C%20I%20want%20a%20free%20quote%20for%20your%20services.";
 
@@ -114,14 +115,11 @@ export function Services() {
       <div className="container-premium">
         
         {/* Eyebrow & Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="font-outfit font-extrabold text-[#EA580C] text-xs uppercase tracking-widest mb-3">
-            Our Services
-          </p>
-          <h2 className="font-outfit font-extrabold text-[#111827] text-3xl md:text-4xl tracking-tight leading-tight">
-            All Your Digital &amp; Printing Needs, Handled with Care
-          </h2>
-        </div>
+        <SectionHeading
+          badge="Our Services"
+          title="All Your Digital & Printing Needs, Handled with Care"
+          subtitle="We bridge the gap between digital innovation and physical branding with our specialized service divisions."
+        />
 
         {/* Toggle Switch styling exactly matching screenshot */}
         <div className="flex justify-center gap-4 mb-14">
