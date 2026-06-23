@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-body font-inter antialiased selection:bg-accent selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit text-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-[60px] md:py-[80px] lg:py-[120px];
+  }
+  
+  .container-premium {
+    @apply max-w-[1280px] mx-auto px-6;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
