@@ -83,7 +83,7 @@ export function Reviews() {
               badge="Client Feedback"
               title="What Our Clients Say"
               subtitle="Real reviews from businesses across Maharashtra."
-              centered={false}
+              centered={true}
               className="mb-0"
             />
             <div className="bg-white p-6 rounded-xl border border-borderLight shadow-sm">

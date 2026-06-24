@@ -15,7 +15,7 @@ export function ComparisonSection() {
     <section className="bg-white section-padding border-b border-borderLight">
       <div className="container-premium max-w-5xl">
         <SectionHeading 
-          badge="The Ekta Difference"
+          badge="The LaunchLite Advantage"
           title="Why Choose Launchlite?"
           subtitle="See how our integrated approach saves you time, money, and hassle compared to managing multiple agencies."
         />

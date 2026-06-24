@@ -3,16 +3,16 @@ import { cn } from "../../utils/cn";
 
 export function SectionHeading({ badge, title, subtitle, className, centered = true }) {
   return (
-    <div className={cn("flex flex-col gap-4 mb-16", centered && "items-center text-center", className)}>
+    <div className={cn("flex flex-col gap-3 mb-14", centered && "items-center text-center", className)}>
       {badge && (
-        <motion.span 
+        <motion.p 
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="inline-block px-4 py-1.5 rounded-full bg-orange-50 text-accent font-inter text-sm font-semibold tracking-wide uppercase"
+          className="font-outfit font-bold text-[#EA580C] text-sm tracking-widest uppercase mb-1"
         >
           {badge}
-        </motion.span>
+        </motion.p>
       )}
       
       <motion.h2 
@@ -20,7 +20,7 @@ export function SectionHeading({ badge, title, subtitle, className, centered = t
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="text-4xl md:text-5xl font-outfit font-bold text-heading leading-[1.1]"
+        className="text-3xl md:text-4xl lg:text-[44px] font-extrabold font-outfit text-[#111827] leading-tight tracking-tight"
       >
         {title}
       </motion.h2>
@@ -31,7 +31,7 @@ export function SectionHeading({ badge, title, subtitle, className, centered = t
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-body font-inter text-lg md:text-xl max-w-2xl leading-relaxed"
+          className="font-inter text-[#4B5563] text-base md:text-lg leading-relaxed max-w-2xl"
         >
           {subtitle}
         </motion.p>

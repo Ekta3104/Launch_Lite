@@ -6,39 +6,40 @@ import { ExternalLink, Code } from "lucide-react";
 export function DigitalPortfolio() {
   const projects = [
     {
-      title: "Student Result Management System",
-      desc: "A comprehensive portal for managing student academic records with real-time result generation and administrative controls.",
-      outcome: "Reduced manual data entry by 85% and eliminated calculation errors.",
-      tags: ["React", "Node.js", "MongoDB"],
-      color: "bg-blue-600"
+      title: "Physiotherapy & Wellness Center",
+      desc: "A professional and calming website design for a local physiotherapy clinic, featuring an integrated appointment booking system, patient portal, and a comprehensive list of services.",
+      outcome: "Increased online appointment bookings by 40% in the first quarter.",
+      tags: ["React", "Node.js", "Tailwind"],
+      color: "bg-cyan-600"
     },
     {
-      title: "Employee Management System",
-      desc: "Internal dashboard for tracking attendance, leaves, payroll, and performance evaluations.",
-      outcome: "Streamlined HR processes for a 500+ employee organization.",
-      tags: ["Vue.js", "Express", "PostgreSQL"],
-      color: "bg-indigo-600"
+      title: "Fine Dining Restaurant Platform",
+      desc: "An elegant, highly visual website and mobile app for a premium restaurant. Includes interactive digital menus, online table reservations, and event catering inquiries.",
+      outcome: "Seamless reservation flow leading to a 30% increase in weekend bookings.",
+      tags: ["Next.js", "Framer Motion", "Stripe"],
+      color: "bg-rose-600",
+      image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=85"
     },
     {
-      title: "Food Delivery Application",
-      desc: "Cross-platform mobile application for ordering food with real-time GPS tracking and secure payment gateway.",
-      outcome: "Achieved 10,000+ downloads in the first month with a 4.8 star rating.",
-      tags: ["React Native", "Firebase", "Stripe"],
-      color: "bg-orange-600"
+      title: "E-Commerce Fashion Boutique",
+      desc: "A high-performance e-commerce platform for a local boutique, featuring advanced filtering, dynamic product galleries, and a seamless checkout experience.",
+      outcome: "Boosted monthly online sales by 60% with an improved conversion rate.",
+      tags: ["Shopify", "React", "GraphQL"],
+      color: "bg-fuchsia-600"
     },
     {
-      title: "AI PDF Chat Assistant",
-      desc: "SaaS platform allowing users to upload PDFs and intelligently query the content using conversational AI.",
-      outcome: "Processed over 50,000 documents with high accuracy retrieval.",
-      tags: ["Next.js", "OpenAI", "Pinecone"],
+      title: "Corporate Real Estate Portal",
+      desc: "A lead-generation website for a real estate agency, allowing users to search properties, view virtual tours, and schedule viewings instantly.",
+      outcome: "Generated 200+ qualified leads in the first month.",
+      tags: ["Vue.js", "Firebase", "Maps API"],
+      color: "bg-blue-800"
+    },
+    {
+      title: "Local Gym & Fitness Dashboard",
+      desc: "A member portal for a fitness center to track workouts, renew memberships, and book personal training sessions.",
+      outcome: "Automated 90% of membership renewals, saving administrative hours.",
+      tags: ["React", "Express", "PostgreSQL"],
       color: "bg-emerald-600"
-    },
-    {
-      title: "Swami Samarth Jap Counter",
-      desc: "Spiritual mobile application for tracking daily mantras and maintaining a digital journal of devotion.",
-      outcome: "Highly engaged community of 5,000+ daily active users.",
-      tags: ["Flutter", "Dart", "SQLite"],
-      color: "bg-rose-600"
     }
   ];
 
@@ -64,11 +65,19 @@ export function DigitalPortfolio() {
               }`}
             >
               <div className={`w-full ${i === 0 ? "lg:w-1/2" : ""} aspect-video ${project.color} relative overflow-hidden`}>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="absolute inset-4 mt-8 mx-8 bg-white/10 backdrop-blur-sm rounded-t-xl border-t border-x border-white/20 shadow-2xl flex items-center justify-center group-hover:-translate-y-2 transition-transform duration-500">
+                    <span className="font-outfit font-bold text-white/50 text-xl">App Interface Preview</span>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                {/* Large Preview Image Placeholder */}
-                <div className="absolute inset-4 mt-8 mx-8 bg-white/10 backdrop-blur-sm rounded-t-xl border-t border-x border-white/20 shadow-2xl flex items-center justify-center group-hover:-translate-y-2 transition-transform duration-500">
-                  <span className="font-outfit font-bold text-white/50 text-xl">App Interface Preview</span>
-                </div>
               </div>
               
               <div className={`p-8 ${i === 0 ? "lg:w-1/2 flex flex-col justify-center" : ""}`}>

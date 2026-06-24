@@ -1,4 +1,5 @@
 import { MessageCircle, MapPin, Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
@@ -8,11 +9,11 @@ export function Footer() {
           
           {/* Company Introduction */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <a href="#" className="inline-block">
+            <Link to="/" className="inline-block">
               <span className="font-outfit font-bold text-3xl tracking-tight text-white">
                 LAUNCH <span className="text-accent">LITE</span>
               </span>
-            </a>
+            </Link>
             <p className="font-inter text-blue-100 text-sm leading-relaxed pr-8">
               Transform Your Business With Premium Websites, Branding & Printing Solutions. We help businesses grow with professional solutions that create lasting impact.
             </p>
@@ -35,10 +36,16 @@ export function Footer() {
           {/* Quick Links */}
           <div className="flex flex-col gap-4">
             <h4 className="font-outfit font-bold text-lg mb-2">Quick Links</h4>
-            {["Home", "About Us", "Our Portfolio", "Pricing Plans", "Contact Us"].map(link => (
-              <a key={link} href="#" className="font-inter text-blue-100 text-sm hover:text-accent transition-colors w-fit">
-                {link}
-              </a>
+            {[
+              { name: "Home", href: "/" },
+              { name: "About Us", href: "/about" },
+              { name: "Our Portfolio", href: "/portfolio" },
+              { name: "Pricing Plans", href: "/pricing" },
+              { name: "Contact Us", href: "/contact" }
+            ].map(link => (
+              <Link key={link.name} to={link.href} className="font-inter text-blue-100 text-sm hover:text-accent transition-colors w-fit">
+                {link.name}
+              </Link>
             ))}
           </div>
 
@@ -46,9 +53,9 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <h4 className="font-outfit font-bold text-lg mb-2">Digital Services</h4>
             {["Website Development", "Mobile Applications", "UI/UX Design", "Digital Marketing", "Web Applications"].map(link => (
-              <a key={link} href="#" className="font-inter text-blue-100 text-sm hover:text-accent transition-colors w-fit">
+              <Link key={link} to="/services" className="font-inter text-blue-100 text-sm hover:text-accent transition-colors w-fit">
                 {link}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -56,9 +63,9 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <h4 className="font-outfit font-bold text-lg mb-2">Printing Services</h4>
             {["Wedding Cards", "Visiting Cards", "Brochures", "Posters", "Flex Printing"].map(link => (
-              <a key={link} href="#" className="font-inter text-blue-100 text-sm hover:text-accent transition-colors w-fit">
+              <Link key={link} to="/services" className="font-inter text-blue-100 text-sm hover:text-accent transition-colors w-fit">
                 {link}
-              </a>
+              </Link>
             ))}
           </div>
 

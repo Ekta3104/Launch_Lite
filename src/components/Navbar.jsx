@@ -1,23 +1,24 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, MapPin, Clock, ChevronDown, ArrowRight } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const WA_NAV = "https://wa.me/917350583530?text=Hello%20Launchlite%2C%20I%20need%20a%20free%20quote.";
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "About Us", href: "#about" },
-  { name: "Services", href: "#services", hasDropdown: true },
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Reviews", href: "#reviews" },
-  { name: "Contact Us", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
+  { name: "Services", href: "/services", hasDropdown: true },
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Reviews", href: "/#reviews" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("Home");
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -95,38 +96,40 @@ export function Navbar() {
       >
         <div className="container-premium flex items-center justify-between gap-6">
           {/* Logo */}
-          <a href="#" className="flex flex-col leading-none flex-shrink-0">
+          <Link to="/" className="flex flex-col leading-none flex-shrink-0">
             <span className="font-outfit font-extrabold text-[22px] tracking-tight text-[#0B2A5B]">
               Launch<span className="text-[#EA580C]">Lite</span>
             </span>
             <span className="font-inter text-[9px] font-semibold tracking-[0.12em] text-slate-500 uppercase mt-0.5">
               Digital Agency &amp; Printing Services
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1 flex-1 justify-center">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setActiveLink(link.name)}
-                className={`relative flex items-center gap-0.5 px-3 py-2 font-inter text-sm font-medium transition-colors rounded-lg ${
-                  activeLink === link.name
-                    ? "text-[#EA580C]"
-                    : "text-[#1a2942] hover:text-[#EA580C]"
-                }`}
-              >
-                {link.name}
-                {link.hasDropdown && <ChevronDown size={13} className="mt-0.5 opacity-70" />}
-                {activeLink === link.name && (
-                  <motion.span
-                    layoutId="nav-underline"
-                    className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#EA580C] rounded-full"
-                  />
-                )}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = link.href === "/" ? location.pathname === "/" : location.pathname.startsWith(link.href.split('#')[0]);
+              return (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className={`relative flex items-center gap-0.5 px-3 py-2 font-inter text-sm font-medium transition-colors rounded-lg ${
+                    isActive
+                      ? "text-[#EA580C]"
+                      : "text-[#1a2942] hover:text-[#EA580C]"
+                  }`}
+                >
+                  {link.name}
+                  {link.hasDropdown && <ChevronDown size={13} className="mt-0.5 opacity-70" />}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-underline"
+                      className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#EA580C] rounded-full"
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Desktop CTA */}
@@ -163,15 +166,15 @@ export function Navbar() {
             >
               <div className="px-6 py-5 flex flex-col gap-1">
                 {navLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.name}
-                    href={link.href}
+                    to={link.href}
                     className="flex items-center justify-between font-inter text-base font-medium text-[#1a2942] py-3 border-b border-slate-50 hover:text-[#EA580C] transition-colors"
-                    onClick={() => { setActiveLink(link.name); setIsOpen(false); }}
+                    onClick={() => setIsOpen(false)}
                   >
                     {link.name}
                     {link.hasDropdown && <ChevronDown size={14} />}
-                  </a>
+                  </Link>
                 ))}
                 <a
                   href={WA_NAV}
