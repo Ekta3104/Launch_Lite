@@ -73,7 +73,7 @@ export function Reviews() {
   const filtered = activeCategory === "All" ? allReviews : allReviews.filter((r) => r.category === activeCategory);
 
   return (
-    <section className="bg-slate-50 border-y border-borderLight section-padding">
+    <section id="reviews" className="bg-slate-50 border-y border-borderLight section-padding">
       <div className="container-premium">
         <div className="grid lg:grid-cols-4 gap-12 items-start">
 

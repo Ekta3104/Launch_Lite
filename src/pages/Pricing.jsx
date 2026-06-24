@@ -1,9 +1,11 @@
-import PricingSection from "../components/Pricing";
+import { Pricing } from "../components/sections/Pricing";
 
-export default function Pricing() {
+export default function PricingPage() {
   return (
     <div className="flex flex-col">
-      <PricingSection />
+      <Pricing />
+      
+      
     </div>
   );
 }

@@ -8,10 +8,8 @@ export default function Services() {
   return (
     <div className="flex flex-col">
       <ServicesSection />
-      <Solutions />
-      <Process />
-      <PrintingShowcase />
-      <FreeConsultation />
+      
+      
     </div>
   );
 }

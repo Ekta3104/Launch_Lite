@@ -70,14 +70,14 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="font-inter text-xs text-body">Address</p>
-                  <p className="font-outfit font-bold text-heading text-sm">123 Creative Street, Pune, Maharashtra 411001</p>
+                  <p className="font-outfit font-bold text-heading text-sm">Ahilyanagar, Maharashtra 414003</p>
                 </div>
               </div>
             </div>
 
             {/* Business Hours */}
             <div className="bg-primary text-white p-6 rounded-xl shadow-lg">
-              <h4 className="font-outfit font-bold text-lg mb-4">Business Hours</h4>
+              <h4 className="font-outfit font-bold text-white mb-4">Business Hours</h4>
               <ul className="flex flex-col gap-2 font-inter text-sm text-blue-100">
                 <li className="flex justify-between border-b border-white/10 pb-2"><span>Monday – Friday</span><span className="font-semibold text-white">9:00 AM – 7:00 PM</span></li>
                 <li className="flex justify-between border-b border-white/10 pb-2"><span>Saturday</span><span className="font-semibold text-white">10:00 AM – 4:00 PM</span></li>

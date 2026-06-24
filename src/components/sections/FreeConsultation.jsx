@@ -10,7 +10,7 @@ export function FreeConsultation() {
   ];
 
   return (
-    <section className="bg-primary text-white py-20 relative overflow-hidden">
+    <section className="bg-primary text-white py-12 md:py-8 mx-4 md:mx-8 lg:mx-12 rounded-[32px] overflow-hidden mb-16 shadow-2xl relative">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent bg-[length:20px_20px]"></div>
       
@@ -25,7 +25,8 @@ export function FreeConsultation() {
             className="lg:col-span-3"
           >
             <h2 className="text-3xl md:text-5xl font-outfit font-bold mb-6 leading-tight">
-              Get Free Website, Printing & <span className="text-accent">Branding Consultation</span>
+              <span className="text-white">Get Free Website, Printing &</span>{' '}
+              <span className="text-accent">Branding Consultation</span>
             </h2>
             <p className="font-inter text-blue-100 text-lg mb-8 max-w-xl">
               Not sure where to start? Let's discuss your ideas. We provide expert advice to help you make the right decisions for your business growth.
@@ -64,6 +65,8 @@ export function FreeConsultation() {
           </motion.div>
           
         </div>
+        
+        
       </div>
     </section>
   );

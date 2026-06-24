@@ -84,7 +84,7 @@ export function Footer() {
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="text-accent" size={20} />
-              <span className="font-inter text-sm text-blue-50">123 Creative Street, Design City, India</span>
+              <span className="font-inter text-sm text-blue-50">Ahilyanagar, Maharashtra 414003</span>
             </div>
           </div>
           <a 
