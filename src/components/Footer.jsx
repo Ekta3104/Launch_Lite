@@ -35,7 +35,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col gap-4">
-            <h4 className="font-outfit font-bold text-lg mb-2">Quick Links</h4>
+            <h4 className="font-outfit font-bold text-lg mb-2 text-orange-500">Quick Links</h4>
             {[
               { name: "Home", href: "/" },
               { name: "About Us", href: "/about" },
@@ -51,7 +51,7 @@ export function Footer() {
 
           {/* Digital Services */}
           <div className="flex flex-col gap-4">
-            <h4 className="font-outfit font-bold text-lg mb-2">Digital Services</h4>
+            <h4 className="font-outfit font-bold text-lg mb-2 text-orange-500">Digital Services</h4>
             {["Website Development", "Mobile Applications", "UI/UX Design", "Digital Marketing", "Web Applications"].map(link => (
               <Link key={link} to="/services" className="font-inter text-blue-100 text-sm hover:text-accent transition-colors w-fit">
                 {link}
@@ -61,7 +61,7 @@ export function Footer() {
 
           {/* Printing Services */}
           <div className="flex flex-col gap-4">
-            <h4 className="font-outfit font-bold text-lg mb-2">Printing Services</h4>
+            <h4 className="font-outfit font-bold text-lg mb-2 text-orange-500">Printing Services</h4>
             {["Wedding Cards", "Visiting Cards", "Brochures", "Posters", "Flex Printing"].map(link => (
               <Link key={link} to="/services" className="font-inter text-blue-100 text-sm hover:text-accent transition-colors w-fit">
                 {link}

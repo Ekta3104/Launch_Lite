@@ -31,27 +31,27 @@ export function ReadyToGrow() {
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
-                href="tel:+917350583530"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-[#0B2A5B] hover:bg-slate-100 transition"
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F97316] hover:bg-orange-600 text-white font-outfit font-bold text-base transition-all shadow-lg hover:-translate-y-1"
               >
-                <Phone className="w-5 h-5" />
-                Call Now
+                Get Quote
+                <ArrowRight className="w-5 h-5" />
               </a>
               <a
                 href={WA_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-base font-semibold text-white hover:bg-[#20bd5a] transition"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-outfit font-bold text-base transition-all shadow-lg hover:-translate-y-1"
               >
                 <MessageCircle className="w-5 h-5" />
                 WhatsApp Us
               </a>
               <a
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F97316] px-8 py-4 text-base font-semibold text-white hover:bg-orange-600 transition"
+                href="tel:+917350583530"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-[#0B2A5B] hover:bg-slate-100 font-outfit font-bold text-base transition-all shadow-md hover:-translate-y-1"
               >
-                Get Quote
-                <ArrowRight className="w-5 h-5" />
+                <Phone className="w-5 h-5" />
+                Call Now
               </a>
             </div>
           </div>

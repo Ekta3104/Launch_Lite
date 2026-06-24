@@ -150,7 +150,7 @@ export function FeaturedWork() {
           </AnimatePresence>
         </div>
 
-        {/* Lead Capture CTA */}
+        {/* Lead Capture CTA 
         <div className="mt-14 text-center">
           <h3 className="font-outfit text-2xl md:text-3xl font-extrabold text-[#111827] mb-3">
             Like What You See?
@@ -183,7 +183,7 @@ export function FeaturedWork() {
               Call Now
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

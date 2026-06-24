@@ -1,8 +1,8 @@
 import { Hero } from "../components/sections/Hero";
 import { TrustStrip } from "../components/sections/TrustStrip";
 import { ServicesPreview } from "../components/sections/ServicesPreview";
-import { LocalTrust } from "../components/sections/LocalTrust";
 import { FeaturedWork } from "../components/sections/FeaturedWork";
+import { WhyChooseUs } from "../components/sections/WhyChooseUs";
 import { Process } from "../components/sections/Process";
 import { ReadyToGrow } from "../components/sections/ReadyToGrow";
 import { ComparisonSection } from "../components/sections/ComparisonSection";
@@ -17,14 +17,14 @@ export default function Home() {
       <Hero />
       <TrustStrip />
       <ServicesPreview />
-      {/* WhyChooseUs should appear here (kept in LocalTrust file previously) */}
+      <WhyChooseUs /> {/* This should appear here (kept in LocalTrust file previously) */}
       <FeaturedWork />
       <Reviews />
       <Process />
       <ReadyToGrow />
       <ComparisonSection />
       <ResultsImpact />
-      <LocalTrust />
+      { /*<LocalTrust /> */ } {/* This section is now integrated into WhyChooseUs */}
       <FAQ />
       <FinalCTA />
     </div>

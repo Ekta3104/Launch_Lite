@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
-import { Store, Utensils, GraduationCap, Stethoscope, Rocket, Briefcase, ShoppingBag, CalendarHeart } from "lucide-react";
 
 const WA_CONTACT = "https://wa.me/917350583530?text=Hello%20Launchlite%2C%20I%20want%20to%20discuss%20solutions%20for%20my%20business.";
 
@@ -13,90 +12,66 @@ const CheckIcon = () => (
 export function IndustriesWeServe() {
   const industries = [
     {
-      icon: Store,
       title: "Retail Stores",
       desc: "Boost your retail sales with engaging branding and robust online storefronts.",
-      image: "/service-branding.png",
+      image: "/industry-retail.png",
       features: ["E-Commerce Sites", "Product Packaging", "Flyers & Posters", "Store Branding"],
-      bgColor: "bg-indigo-50",
-      iconColor: "text-indigo-600",
       checkColor: "bg-indigo-500",
       buttonColor: "text-indigo-600 hover:text-indigo-700",
     },
     {
-      icon: Utensils,
       title: "Restaurants",
       desc: "Increase orders with digital menu systems, reservation apps, and visual prints.",
-      image: "/service-brochure.png",
+      image: "/industry-restaurant.png",
       features: ["Digital Menus", "Order Web Apps", "Social Creatives", "Branded Packaging"],
-      bgColor: "bg-rose-50",
-      iconColor: "text-rose-600",
       checkColor: "bg-rose-500",
       buttonColor: "text-rose-600 hover:text-rose-700",
     },
     {
-      icon: GraduationCap,
       title: "Educational Institutes",
       desc: "Modernize enrollment with prospectus brochures, banner displays, and school portals.",
-      image: "/service-design.png",
+      image: "/industry-education.png",
       features: ["School Websites", "Student Portals", "Admission Packets", "Banner Displays"],
-      bgColor: "bg-sky-50",
-      iconColor: "text-sky-600",
       checkColor: "bg-sky-500",
       buttonColor: "text-sky-600 hover:text-sky-700",
     },
     {
-      icon: Stethoscope,
       title: "Medical Clinics",
       desc: "Improve patient experience with booking portals, clinic sites, and custom materials.",
-      image: "/service-webdev.png",
+      image: "/industry-medical.png",
       features: ["Booking Portals", "Clinic Websites", "Patient Forms", "Professional Cards"],
-      bgColor: "bg-blue-50",
-      iconColor: "text-blue-600",
       checkColor: "bg-blue-500",
       buttonColor: "text-blue-600 hover:text-blue-700",
     },
     {
-      icon: Rocket,
       title: "Startups",
       desc: "Scale fast with high-performance SaaS landing pages, MVPs, and modern brand assets.",
-      image: "/about-studio.png",
+      image: "/industry-startup.png",
       features: ["MVP Development", "SaaS Landing Pages", "Pitch Decks", "Modern Branding"],
-      bgColor: "bg-purple-50",
-      iconColor: "text-purple-600",
       checkColor: "bg-purple-500",
       buttonColor: "text-purple-600 hover:text-purple-700",
     },
     {
-      icon: Briefcase,
       title: "Small Businesses",
       desc: "Grow your local footprint with SEO optimized websites and tactile visiting cards.",
-      image: "/service-visiting.png",
+      image: "/industry-smallbiz.png",
       features: ["Local SEO Sites", "Visiting Cards", "Flyer Campaigns", "Logo Creation"],
-      bgColor: "bg-orange-50",
-      iconColor: "text-orange-600",
       checkColor: "bg-orange-500",
       buttonColor: "text-orange-600 hover:text-orange-700",
     },
     {
-      icon: CalendarHeart,
       title: "Event Organizers",
       desc: "Draw crowds with premium invitations, flex banners, and event landing pages.",
-      image: "/service-flex.png",
+      image: "/industry-events.png",
       features: ["Invitation Cards", "Flex & Banners", "Event Websites", "Lanyard & Badges"],
-      bgColor: "bg-emerald-50",
-      iconColor: "text-emerald-600",
       checkColor: "bg-emerald-500",
       buttonColor: "text-[#16A34A] hover:text-emerald-700",
     },
     {
-      icon: ShoppingBag,
       title: "E-Commerce",
       desc: "Sell 24/7 with smooth shopping carts, payment APIs, and social marketing ads.",
-      image: "/service-social.png",
+      image: "/industry-ecommerce.png",
       features: ["Online Storefronts", "Payment Setups", "Social Media Ads", "Invoice Layouts"],
-      bgColor: "bg-amber-50",
-      iconColor: "text-amber-500",
       checkColor: "bg-amber-500",
       buttonColor: "text-amber-500 hover:text-amber-600",
     },
@@ -113,7 +88,6 @@ export function IndustriesWeServe() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
           {industries.map((industry, i) => {
-            const Icon = industry.icon;
             return (
               <motion.div
                 key={i}
@@ -124,13 +98,8 @@ export function IndustriesWeServe() {
                 className="bg-white rounded-3xl border border-slate-200/80 shadow-[0_8px_30px_rgb(0,0,0,0.01)] p-6 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
               >
                 <div>
-                  {/* Top-Left Square Icon */}
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${industry.bgColor}`}>
-                    <Icon className={`${industry.iconColor}`} size={22} strokeWidth={2} />
-                  </div>
-
-                  {/* Product Showcase Image Mockup */}
-                  <div className="my-5 rounded-2xl overflow-hidden border border-slate-100 aspect-[4/3] bg-slate-50 relative shadow-sm group-hover:shadow-md transition-all duration-300">
+                  {/* Product Showcase Image Mockup (sits directly at top of card) */}
+                  <div className="mb-5 rounded-2xl overflow-hidden border border-slate-100 aspect-[4/3] bg-slate-50 relative shadow-sm group-hover:shadow-md transition-all duration-300">
                     <img
                       src={industry.image}
                       alt={industry.title}
