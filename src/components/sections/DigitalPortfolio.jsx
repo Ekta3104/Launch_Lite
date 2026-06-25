@@ -4,6 +4,9 @@ import { Button } from "../ui/Button";
 import { ExternalLink, Code } from "lucide-react";
 import physioImg from "../../assets/image.png";
 import restImg from "../../assets/rest.png";
+import fashionImg from "../../assets/fasion.png";
+import realEstateImg from "../../assets/Real Estate Portal.png";
+import gymImg from "../../assets/gym.png";
 
 export function DigitalPortfolio() {
   const projects = [
@@ -33,6 +36,7 @@ export function DigitalPortfolio() {
       outcome: "Boosted monthly online sales by 60% with an improved conversion rate.",
       tags: ["Shopify", "React", "GraphQL"],
       color: "bg-fuchsia-600",
+      image: fashionImg,
     },
     {
       title: "Corporate Real Estate Portal",
@@ -40,6 +44,7 @@ export function DigitalPortfolio() {
       outcome: "Generated 200+ qualified leads in the first month.",
       tags: ["Vue.js", "Firebase", "Maps API"],
       color: "bg-blue-800",
+      image: realEstateImg,
     },
     {
       title: "Local Gym & Fitness Dashboard",
@@ -47,6 +52,7 @@ export function DigitalPortfolio() {
       outcome: "Automated 90% of membership renewals, saving administrative hours.",
       tags: ["React", "Express", "PostgreSQL"],
       color: "bg-emerald-600",
+      image: gymImg,
     }
   ];
 
@@ -71,21 +77,34 @@ export function DigitalPortfolio() {
                 i === 0 ? "lg:col-span-2 lg:flex" : ""
               }`}
             >
-              <div className={`w-full ${i === 0 ? "lg:w-1/2" : ""} aspect-video ${project.color} relative overflow-hidden`}>
-                {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className={`w-full h-full ${project.title === 'Fine Dining Restaurant Platform' ? 'object-contain p-6 bg-white' : i === 0 ? 'object-contain p-6 bg-white' : 'object-cover'} group-hover:scale-105 transition-transform duration-700`}
-                    style={project.title === 'Fine Dining Restaurant Platform' ? {objectPosition: 'center center'} : {}}
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="absolute inset-4 mt-8 mx-8 bg-white/10 backdrop-blur-sm rounded-t-xl border-t border-x border-white/20 shadow-2xl flex items-center justify-center group-hover:-translate-y-2 transition-transform duration-500">
-                    <span className="font-outfit font-bold text-white/50 text-xl">App Interface Preview</span>
+              {/* Image container (no colorful border/padding) */}
+              <div className={`w-full ${i === 0 ? "lg:w-1/2" : ""} aspect-video relative overflow-hidden`}>
+                {/* Browser window frame container */}
+                <div className="w-full h-full flex flex-col relative z-10">
+                  {/* Browser toolbar bar */}
+                  <div className="h-6 bg-slate-50 border-b border-slate-200/40 flex items-center px-3 gap-1.5 shrink-0 select-none">
+                    <div className="w-2 h-2 rounded-full bg-rose-400"></div>
+                    <div className="w-2 h-2 rounded-full bg-amber-400"></div>
+                    <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
                   </div>
-                )}
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                  
+                  {/* Browser viewport */}
+                  <div className="w-full h-full overflow-hidden relative bg-slate-50">
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center bg-slate-100">
+                        <span className="font-outfit font-bold text-slate-400 text-sm">App Viewport Preview</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-20"></div>
               </div>
               
               <div className={`p-8 ${i === 0 ? "lg:w-1/2 flex flex-col justify-center" : ""}`}>

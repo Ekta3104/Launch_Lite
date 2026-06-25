@@ -1,12 +1,18 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
+import weddingMock from "../../assets/Weding card mockup.png";
+import brochureMock from "../../assets/Brochermock.png";
+import calendarMock from "../../assets/CalenderMockup.png";
+import displayMock from "../../assets/DisplayMockup.png";
+import flexMock from "../../assets/flexmockup.png";
 
 export function PrintingShowcase() {
   const prints = [
     {
       title: "Wedding Card Mockup",
       desc: "Premium foil-stamped luxury wedding invitations",
-      color: "bg-rose-100"
+      color: "bg-rose-100",
+      image: weddingMock
     },
     {
       title: "Corporate Visiting Cards",
@@ -17,22 +23,26 @@ export function PrintingShowcase() {
     {
       title: "Brochure Fold Mockup",
       desc: "High-quality tri-fold corporate brochures",
-      color: "bg-blue-100"
+      color: "bg-blue-100",
+      image: brochureMock
     },
     {
       title: "Calendar Mockup",
       desc: "Custom wall and desk calendars for branding",
-      color: "bg-amber-50"
+      color: "bg-amber-50",
+      image: calendarMock
     },
     {
       title: "Poster Display Mockup",
       desc: "Large format high-resolution poster prints",
-      color: "bg-indigo-100"
+      color: "bg-indigo-100",
+      image: displayMock
     },
     {
       title: "Flex Banner Mockup",
       desc: "Durable outdoor and indoor advertising banners",
-      color: "bg-teal-100"
+      color: "bg-teal-100",
+      image: flexMock
     }
   ];
 
