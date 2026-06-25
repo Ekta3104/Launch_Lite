@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Button } from "../ui/Button";
 import { ExternalLink, Code } from "lucide-react";
+import physioImg from "../../assets/image.png";
+import restImg from "../../assets/rest.png";
 
 export function DigitalPortfolio() {
   const projects = [
@@ -11,6 +13,9 @@ export function DigitalPortfolio() {
       outcome: "Increased online appointment bookings by 40% in the first quarter.",
       tags: ["React", "Node.js", "Tailwind"],
       color: "bg-cyan-600"
+      ,
+      image: physioImg,
+      liveDemo: "https://www.drsandesha.in/"
     },
     {
       title: "Fine Dining Restaurant Platform",
@@ -18,28 +23,30 @@ export function DigitalPortfolio() {
       outcome: "Seamless reservation flow leading to a 30% increase in weekend bookings.",
       tags: ["Next.js", "Framer Motion", "Stripe"],
       color: "bg-rose-600",
-      image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=85"
+      image: restImg,
+      liveDemo: "https://royal-spice-sepia.vercel.app/",
+      // useLocalImage: true // kept as a note in case we want conditional logic later
     },
     {
       title: "E-Commerce Fashion Boutique",
       desc: "A high-performance e-commerce platform for a local boutique, featuring advanced filtering, dynamic product galleries, and a seamless checkout experience.",
       outcome: "Boosted monthly online sales by 60% with an improved conversion rate.",
       tags: ["Shopify", "React", "GraphQL"],
-      color: "bg-fuchsia-600"
+      color: "bg-fuchsia-600",
     },
     {
       title: "Corporate Real Estate Portal",
       desc: "A lead-generation website for a real estate agency, allowing users to search properties, view virtual tours, and schedule viewings instantly.",
       outcome: "Generated 200+ qualified leads in the first month.",
       tags: ["Vue.js", "Firebase", "Maps API"],
-      color: "bg-blue-800"
+      color: "bg-blue-800",
     },
     {
       title: "Local Gym & Fitness Dashboard",
       desc: "A member portal for a fitness center to track workouts, renew memberships, and book personal training sessions.",
       outcome: "Automated 90% of membership renewals, saving administrative hours.",
       tags: ["React", "Express", "PostgreSQL"],
-      color: "bg-emerald-600"
+      color: "bg-emerald-600",
     }
   ];
 
@@ -69,7 +76,8 @@ export function DigitalPortfolio() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className={`w-full h-full ${project.title === 'Fine Dining Restaurant Platform' ? 'object-contain p-6 bg-white' : i === 0 ? 'object-contain p-6 bg-white' : 'object-cover'} group-hover:scale-105 transition-transform duration-700`}
+                    style={project.title === 'Fine Dining Restaurant Platform' ? {objectPosition: 'center center'} : {}}
                     loading="lazy"
                   />
                 ) : (
@@ -105,9 +113,16 @@ export function DigitalPortfolio() {
                 </div>
                 
                 <div className="flex gap-4 mt-auto">
-                  <Button variant="primary" size="sm" className="gap-2">
-                    <ExternalLink size={16} /> Live Demo
-                  </Button>
+                  {project.liveDemo ? (
+                    <Button variant="primary" size="sm" className="gap-2" href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink size={16} /> Live Demo
+                    </Button>
+                  ) : (
+                    <Button variant="primary" size="sm" className="gap-2">
+                      <ExternalLink size={16} /> Live Demo
+                    </Button>
+                  )}
+
                   <Button variant="outline" size="sm" className="gap-2">
                     <Code size={16} /> GitHub
                   </Button>

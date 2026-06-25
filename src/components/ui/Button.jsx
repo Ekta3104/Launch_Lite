@@ -5,6 +5,7 @@ export function Button({
   className, 
   variant = "primary", 
   size = "md", 
+  href, 
   ...props 
 }) {
   const baseStyles = "inline-flex items-center justify-center font-inter font-medium rounded-premium transition-all duration-300 ease-in-out active:scale-95";
@@ -22,9 +23,19 @@ export function Button({
     lg: "px-8 py-4 text-lg",
   };
 
+  const classes = cn(baseStyles, variants[variant], sizes[size], className);
+
+  if (href) {
+    return (
+      <a className={classes} href={href} {...props}>
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button 
-      className={cn(baseStyles, variants[variant], sizes[size], className)} 
+      className={classes} 
       {...props}
     >
       {children}
