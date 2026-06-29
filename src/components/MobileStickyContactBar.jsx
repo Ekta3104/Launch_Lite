@@ -17,7 +17,7 @@ export function MobileStickyContactBar() {
       <a 
         href={socialLinks.whatsapp}  
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         className="flex-1 flex flex-col items-center justify-center gap-1 py-3 bg-[#25D366] text-white hover:bg-[#20bd5a] transition-colors"
       >
         <MessageCircle size={20} />

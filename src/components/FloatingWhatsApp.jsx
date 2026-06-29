@@ -9,7 +9,7 @@ export function FloatingWhatsApp() {
     <motion.a
       href={WA_FLOAT}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}

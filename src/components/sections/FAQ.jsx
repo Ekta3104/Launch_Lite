@@ -50,7 +50,7 @@ export function FAQ() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+                className="w-full px-6 py-5 flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
                 <span className="font-outfit font-bold text-lg text-heading pr-8">{faq.q}</span>
                 <ChevronDown 
@@ -65,6 +65,7 @@ export function FAQ() {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
                   >
                     <div className="px-6 pb-5 font-inter text-body leading-relaxed">
                       {faq.a}

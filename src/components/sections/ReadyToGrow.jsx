@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
 import { getWhatsAppUrl } from "../../constants/socialLinks";
 import { siteConfig } from "../../config/siteConfig";
+import { Link } from "react-router-dom";
 
 const WA_URL = getWhatsAppUrl("Hello Launchlite, I want to discuss my project.");
 
@@ -32,17 +33,17 @@ export function ReadyToGrow() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#F97316] hover:bg-orange-600 text-white font-outfit font-bold text-base transition-all shadow-lg hover:-translate-y-1"
               >
                 Get Quote
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </Link>
               <a
                 href={WA_URL}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-outfit font-bold text-base transition-all shadow-lg hover:-translate-y-1"
               >
                 <MessageCircle className="w-5 h-5" />

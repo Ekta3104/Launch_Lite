@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function ResultsImpact() {
   const stats = [
-    { value: "10+", label: "Projects Delivered" },
+    { value: "100+", label: "Projects Delivered" },
     { value: "5+", label: "Services Offered" },
     { value: "Fast", label: "Delivery Process" },
     { value: "Affordable", label: "Business Solutions" }

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
 
 export function Process() {
@@ -12,10 +12,14 @@ export function Process() {
     { num: "06", title: "Delivery", desc: "Final launch, handover, and physical print delivery." }
   ];
 
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { amount: 0.1 });
   const [state, setState] = useState({ activeStep: 0, progress: 0 });
 
-  // Auto-play timer (cycles steps every 5 seconds)
+  // Auto-play timer (cycles steps every 5 seconds, only when in view)
   useEffect(() => {
+    if (!isInView) return;
+
     const interval = setInterval(() => {
       setState((prev) => {
         const nextProgress = prev.progress + 0.6; // Increment per 30ms (100 / 0.6 * 30ms = 5000ms = 5s duration)
@@ -33,7 +37,7 @@ export function Process() {
     }, 30);
 
     return () => clearInterval(interval);
-  }, [steps.length]);
+  }, [steps.length, isInView]);
 
   const { activeStep, progress } = state;
 
@@ -42,7 +46,7 @@ export function Process() {
   };
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section ref={containerRef} className="py-24 bg-white relative overflow-hidden">
       {/* Background soft blurs */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-orange-100/10 rounded-full filter blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-pink-100/10 rounded-full filter blur-[100px] pointer-events-none" />

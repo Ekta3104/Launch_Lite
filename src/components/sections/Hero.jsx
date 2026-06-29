@@ -29,6 +29,8 @@ export function Hero() {
           loading="eager"
           decoding="sync"
         />
+        {/* Overlay to ensure contrast */}
+        <div className="absolute inset-0 bg-white/20 lg:bg-gradient-to-r lg:from-white/20 lg:via-white/30 lg:to-transparent z-0" />
       </div>
 
       <div className="container-premium relative z-10 w-full">
@@ -65,7 +67,7 @@ export function Hero() {
               <a
                 href={WA_HERO}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#EA580C] text-white font-outfit font-bold text-base px-7 py-3.5 rounded-full hover:bg-orange-700 transition-all shadow-lg hover:shadow-orange-500/30 hover:-translate-y-0.5 group"
               >
                 Get Free Quote

@@ -107,7 +107,7 @@ export function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-16"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16"
         >
           {trustIndicators.map((indicator, idx) => (
             <div 
@@ -229,7 +229,7 @@ export function Pricing() {
                 <a 
                   href={getWhatsAppUrl("Hello Launchlite, I am looking for a custom solution.")} 
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-xl font-outfit font-bold flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:-translate-y-1"
                 >
                   <MessageCircle size={20} />
@@ -256,9 +256,9 @@ export function Pricing() {
           </h3>
           <p className="text-center font-inter text-slate-600 mb-12 max-w-2xl mx-auto">
             Got questions? We've answered the most common ones. Can't find what you're looking for?{" "}
-            <a href="/contact" className="text-primary font-semibold hover:text-orange-500 transition-colors">
+            <Link to="/contact" className="text-primary font-semibold hover:text-orange-500 transition-colors">
               Contact us
-            </a>
+            </Link>
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -293,7 +293,7 @@ export function Pricing() {
                     opacity: activeFAQ === idx ? 1 : 0,
                   }}
                   transition={{ duration: 0.3 }}
-                  className="overflow-hidden border-t border-slate-200"
+                  className={`overflow-hidden transition-all duration-200 ${activeFAQ === idx ? "border-t border-slate-200" : ""}`}
                 >
                   <p className="p-6 font-inter text-slate-600 leading-relaxed">
                     {faq.answer}

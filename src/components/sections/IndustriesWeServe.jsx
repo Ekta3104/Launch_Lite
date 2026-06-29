@@ -139,7 +139,7 @@ export function IndustriesWeServe() {
                   <a
                     href={WA_CONTACT}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className={`inline-flex items-center justify-center gap-1.5 font-outfit font-extrabold text-xs transition-transform duration-300 ${industry.buttonColor}`}
                   >
                     <span>Explore Solutions</span>

@@ -70,13 +70,13 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="relative h-[620px] w-full flex flex-col gap-5"
+            className="relative h-auto md:h-[620px] w-full flex flex-col gap-5"
           >
             {/* Abstract Background Shapes */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-orange-100/30 rounded-full filter blur-3xl -z-10"></div>
             
             {/* Top Bento Item: Design Studio */}
-            <div className="relative h-[320px] w-full rounded-3xl overflow-hidden border border-slate-200/60 shadow-premium group">
+            <div className="relative h-[220px] md:h-[320px] w-full rounded-3xl overflow-hidden border border-slate-200/60 shadow-premium group">
               <img
                 src="/about-studio.png"
                 alt="LaunchLite creative design studio"
@@ -93,9 +93,9 @@ export function About() {
             </div>
             
             {/* Bottom Bento Row: 2 Items */}
-            <div className="grid grid-cols-12 gap-5 h-[280px]">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 h-auto md:h-[280px]">
               {/* Bottom Left: Print Craft */}
-              <div className="col-span-7 relative rounded-3xl overflow-hidden border border-slate-200/60 shadow-premium group">
+              <div className="col-span-12 md:col-span-7 h-[200px] md:h-full relative rounded-3xl overflow-hidden border border-slate-200/60 shadow-premium group">
                 <img
                   src="/about-print.png"
                   alt="LaunchLite premium print craftsmanship"
@@ -112,7 +112,7 @@ export function About() {
               </div>
 
               {/* Bottom Right: Value Statement / Digital Marketing Bento Card */}
-              <div className="col-span-5 rounded-3xl overflow-hidden border border-slate-200/60 shadow-premium relative group flex flex-col justify-between p-5 text-white">
+              <div className="col-span-12 md:col-span-5 h-[200px] md:h-full rounded-3xl overflow-hidden border border-slate-200/60 shadow-premium relative group flex flex-col justify-between p-5 text-white">
                 <img
                   src="/about-marketing.png"
                   alt="LaunchLite digital marketing analytics"

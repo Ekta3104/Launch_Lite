@@ -17,7 +17,7 @@ export const siteConfig = {
   businessHours: [
     { dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:00", closes: "19:00" }
   ],
-  formspreeEndpoint: "https://formspree.io/f/placeholder", // Replace with real Formspree endpoint
+  formspreeEndpoint: "https://formspree.io/f/xzzpjdvw",
   theme: {
     primary: "#0B2A5B",
     accent: "#EA580C"

@@ -13,7 +13,7 @@ const sections = [
         </p>
         <p className="mt-3">
           This Privacy Policy explains how we collect, use, disclose, and safeguard your information
-          when you visit our website <strong>launchlite.com</strong> or contact us for our services.
+          when you visit our website <strong>launchlite.in</strong> or contact us for our services.
           Please read this policy carefully. If you disagree with its terms, please discontinue use
           of our website.
         </p>
@@ -73,7 +73,7 @@ const sections = [
     content: (
       <>
         <p>
-          Our website may use cookies — small text files placed on your device — to improve your
+          Our website may use cookies small text files placed on your device to improve your
           browsing experience. Cookies help us understand how visitors use our site, which pages are
           most visited, and how long they stay.
         </p>

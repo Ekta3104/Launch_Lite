@@ -149,40 +149,7 @@ export function FeaturedWork() {
           </AnimatePresence>
         </div>
 
-        {/* Lead Capture CTA 
-        <div className="mt-14 text-center">
-          <h3 className="font-outfit text-2xl md:text-3xl font-extrabold text-[#111827] mb-3">
-            Like What You See?
-          </h3>
-          <p className="font-inter text-[#64748B] text-sm md:text-base mb-6 max-w-xl mx-auto">
-            Get a free quote for your website, visiting cards, branding, or printing project.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-[#EA580C] text-white font-outfit font-bold text-base px-8 py-4 rounded-full hover:bg-orange-700 transition-all shadow-lg hover:shadow-[#EA580C]/30 hover:-translate-y-0.5 group"
-            >
-              Get Free Quote
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href={WA_BASE}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-outfit font-bold text-base px-8 py-4 rounded-full hover:bg-[#20bd5a] transition-all shadow-lg hover:-translate-y-0.5"
-            >
-              <MessageCircle className="w-5 h-5" />
-              WhatsApp Us
-            </a>
-            <a
-              href="tel:+917350583530"
-              className="inline-flex items-center justify-center gap-2 bg-white border border-slate-300 text-[#111827] font-outfit font-bold text-base px-8 py-4 rounded-full hover:bg-slate-50 hover:border-[#111827] transition-all shadow-sm hover:-translate-y-0.5"
-            >
-              <Phone className="w-5 h-5" />
-              Call Now
-            </a>
-          </div>
-        </div> */}
+
       </div>
     </section>
   );

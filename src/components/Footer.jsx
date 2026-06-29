@@ -79,7 +79,7 @@ export function Footer() {
           <a 
             href={socialLinks.whatsapp} 
             target="_blank" 
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-inter text-sm font-semibold transition-all shadow-lg hover:shadow-[#25D366]/30"
           >
             <MessageCircle size={18} />

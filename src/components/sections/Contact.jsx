@@ -37,7 +37,7 @@ export function Contact() {
     setLoading(true);
     
     try {
-      const response = await fetch("https://formspree.io/f/xzzpjdvw", {
+      const response = await fetch(siteConfig.formspreeEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -151,7 +151,7 @@ export function Contact() {
                   <a
                     href={WA_INQUIRY}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#25D366] text-white rounded-xl font-outfit font-bold hover:bg-[#20bd5a] transition-all shadow-lg hover:-translate-y-1"
                   >
                     <MessageCircle size={20} /> WhatsApp Us

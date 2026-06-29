@@ -50,7 +50,7 @@ export function Navbar() {
             <a
               href={socialLinks.instagram}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="w-7 h-7 rounded-full border border-slate-600 flex items-center justify-center hover:border-orange-400 hover:text-orange-400 transition-colors"
             >
@@ -64,7 +64,7 @@ export function Navbar() {
             <a
               href={WA_NAV}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="WhatsApp"
               className="w-7 h-7 rounded-full border border-slate-600 flex items-center justify-center hover:border-orange-400 hover:text-orange-400 transition-colors"
             >

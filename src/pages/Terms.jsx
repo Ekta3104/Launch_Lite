@@ -7,8 +7,8 @@ const sections = [
     content: (
       <p>
         By accessing, browsing, or using the <strong>Launchlite</strong> website located at{" "}
-        <strong>launchlite.com</strong>, or by engaging us for any service — including website
-        development, mobile app development, printing, or branding — you confirm that you have read,
+        <strong>launchlite.in</strong>, or by engaging us for any service including website
+        development, mobile app development, printing, or branding you confirm that you have read,
         understood, and agree to be bound by these Terms of Service. If you do not agree to these
         terms, you must not use our website or services.
       </p>

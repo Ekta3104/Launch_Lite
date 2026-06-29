@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Button } from "../ui/Button";
-import { ExternalLink, Code } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import physioImg from "../../assets/image.png";
 import restImg from "../../assets/rest.png";
 import fashionImg from "../../assets/fasion.png";
@@ -134,19 +134,11 @@ export function DigitalPortfolio() {
                 </div>
                 
                 <div className="flex gap-4 mt-auto">
-                  {project.liveDemo ? (
+                  {project.liveDemo && (
                     <Button variant="primary" size="sm" className="gap-2" href={project.liveDemo} target="_blank" rel="noopener noreferrer">
                       <ExternalLink size={16} /> Live Demo
                     </Button>
-                  ) : (
-                    <Button variant="primary" size="sm" className="gap-2">
-                      <ExternalLink size={16} /> Live Demo
-                    </Button>
                   )}
-
-                  <Button variant="outline" size="sm" className="gap-2">
-                    <Code size={16} /> GitHub
-                  </Button>
                 </div>
               </div>
             </motion.div>

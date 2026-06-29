@@ -23,18 +23,37 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    const titles = {
-      "/": "Home | LaunchLite",
-      "/about": "About Us | LaunchLite",
-      "/services": "Our Services | LaunchLite",
-      "/portfolio": "Portfolio | LaunchLite",
-      "/pricing": "Pricing Plans | LaunchLite",
-      "/contact": "Contact Us | LaunchLite",
-      "/privacy": "Privacy Policy | LaunchLite",
-      "/terms": "Terms of Service | LaunchLite"
+    const pageMeta = {
+      "/": { title: "Home | LaunchLite", desc: "Professional printing, wedding cards, brochures, branding, website development and digital solutions across Maharashtra." },
+      "/about": { title: "About Us | LaunchLite", desc: "Learn about LaunchLite - forming pixels, crafting prints, and growing brands in Ahilyanagar." },
+      "/services": { title: "Our Services | LaunchLite", desc: "Explore our digital solutions, custom web applications, branding kits, and premium printing services." },
+      "/portfolio": { title: "Portfolio | LaunchLite", desc: "Browse our portfolio of digital web portals, mobile application builds, and custom print layouts." },
+      "/pricing": { title: "Pricing Plans | LaunchLite", desc: "Simple, transparent pricing packages for startups, growing businesses, and custom enterprise needs." },
+      "/contact": { title: "Contact Us | LaunchLite", desc: "Get in touch with LaunchLite to request a free quote for your next digital or printing project." },
+      "/privacy": { title: "Privacy Policy | LaunchLite", desc: "Read LaunchLite's privacy policy, detailing how we collect, store, and protect your information." },
+      "/terms": { title: "Terms of Service | LaunchLite", desc: "Review LaunchLite's terms of service, payment parameters, revision policies, and delivery terms." }
     };
-    
-    document.title = titles[location.pathname] || "LaunchLite | Digital Agency";
+
+    const meta = pageMeta[location.pathname] || { title: "LaunchLite | Digital Agency", desc: "Professional Printing & Digital Agency Solutions" };
+    document.title = meta.title;
+
+    // Update Meta Description
+    const descEl = document.querySelector('meta[name="description"]');
+    if (descEl) descEl.setAttribute("content", meta.desc);
+
+    // Update Open Graph Description
+    const ogDescEl = document.querySelector('meta[property="og:description"]');
+    if (ogDescEl) ogDescEl.setAttribute("content", meta.desc);
+
+    // Update Open Graph Title
+    const ogTitleEl = document.querySelector('meta[property="og:title"]');
+    if (ogTitleEl) ogTitleEl.setAttribute("content", meta.title);
+
+    // Update Canonical Link
+    const canonicalEl = document.querySelector('link[rel="canonical"]');
+    if (canonicalEl) {
+      canonicalEl.setAttribute("href", `https://launchlite.com${location.pathname === "/" ? "" : location.pathname}`);
+    }
   }, [location.pathname]);
 
   return (

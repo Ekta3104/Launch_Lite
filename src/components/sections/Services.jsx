@@ -214,7 +214,7 @@ export function Services() {
                       <a
                         href={WA_SERVICE}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className={`inline-flex items-center justify-center gap-1.5 font-outfit font-extrabold text-xs transition-transform duration-300 ${service.buttonColor}`}
                       >
                         <span>Get Quote</span>

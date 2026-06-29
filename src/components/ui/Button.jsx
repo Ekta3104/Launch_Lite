@@ -8,7 +8,7 @@ export function Button({
   href, 
   ...props 
 }) {
-  const baseStyles = "inline-flex items-center justify-center font-inter font-medium rounded-premium transition-all duration-300 ease-in-out active:scale-95";
+  const baseStyles = "inline-flex items-center justify-center font-inter font-medium rounded-premium transition-all duration-300 ease-in-out active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent";
   
   const variants = {
     primary: "bg-accent text-white hover:bg-orange-700 shadow-lg hover:shadow-orange-500/30",

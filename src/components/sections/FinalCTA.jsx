@@ -33,7 +33,7 @@ export function FinalCTA() {
             <a
               href={WA_CTA}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-outfit font-bold text-base transition-all shadow-lg hover:-translate-y-1"
             >
               <MessageCircle size={20} /> WhatsApp Us
