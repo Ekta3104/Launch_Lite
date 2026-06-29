@@ -15,6 +15,8 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -27,7 +29,9 @@ function App() {
       "/services": "Our Services | LaunchLite",
       "/portfolio": "Portfolio | LaunchLite",
       "/pricing": "Pricing Plans | LaunchLite",
-      "/contact": "Contact Us | LaunchLite"
+      "/contact": "Contact Us | LaunchLite",
+      "/privacy": "Privacy Policy | LaunchLite",
+      "/terms": "Terms of Service | LaunchLite"
     };
     
     document.title = titles[location.pathname] || "LaunchLite | Digital Agency";
@@ -48,6 +52,8 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

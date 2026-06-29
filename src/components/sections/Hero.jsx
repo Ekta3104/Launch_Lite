@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Users, Award, Star, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
+import { getWhatsAppUrl } from "../../constants/socialLinks";
 
-const WA_HERO = "https://wa.me/917350583530?text=Hello%20Launchlite%2C%20I%20need%20a%20free%20quote.";
+const WA_HERO = getWhatsAppUrl("Hello Launchlite, I need a free quote.");
 
 const stats = [
   { icon: Users, value: "100+", label: "Happy Clients" },
@@ -25,6 +27,7 @@ export function Hero() {
           alt="LaunchLite printing studio background"
           className="w-full h-full object-cover object-center lg:object-right"
           loading="eager"
+          decoding="sync"
         />
       </div>
 
@@ -76,8 +79,8 @@ export function Hero() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
-              <a
-                href="#portfolio"
+              <Link
+                to="/portfolio"
                 className="inline-flex items-center gap-2 border-2 border-[#CBD5E1] text-[#111827] font-outfit font-bold text-base px-7 py-3.5 rounded-full hover:border-[#0B2A5B] hover:text-[#0B2A5B] transition-all bg-white group"
               >
                 View Our Work
@@ -90,7 +93,7 @@ export function Hero() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             {/* Stat Badges */}

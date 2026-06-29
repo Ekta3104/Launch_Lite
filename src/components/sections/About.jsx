@@ -39,7 +39,7 @@ export function About() {
                 "As engineers and entrepreneurs, we understand that every successful business needs both strong technology and strong branding. Through LaunchLite, we help local businesses build a powerful presence online and offline."</p>
               <div className="mt-4 flex items-center gap-2 relative z-10">
                 <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
-                <span className="font-outfit font-bold text-heading text-xs">Ekta Gire & Harshal Vanhere</span>
+                <span className="font-outfit font-bold text-heading text-xs">Launchlite Founders</span>
                 <span className="font-inter text-body text-[10px] font-medium">— Co-Founders</span>
               </div>
             </div>

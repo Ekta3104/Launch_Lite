@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
+import { getWhatsAppUrl } from "../../constants/socialLinks";
 
-const WA_CONTACT = "https://wa.me/917350583530?text=Hello%20Launchlite%2C%20I%20want%20to%20discuss%20solutions%20for%20my%20business.";
+const WA_CONTACT = getWhatsAppUrl("Hello Launchlite, I want to discuss solutions for my business.");
 
 const CheckIcon = () => (
   <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">

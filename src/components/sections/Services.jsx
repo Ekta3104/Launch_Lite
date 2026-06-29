@@ -1,9 +1,11 @@
 import { useState } from "react";
+/* eslint-disable react-refresh/only-export-components */
 import { motion, AnimatePresence } from "framer-motion";
 import { PenTool, Globe, Megaphone, Tag, Contact, Presentation, Map, Printer, Monitor } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
+import { getWhatsAppUrl } from "../../constants/socialLinks";
 
-const WA_SERVICE = "https://wa.me/917350583530?text=Hello%20Launchlite%2C%20I%20want%20a%20free%20quote%20for%20your%20services.";
+const WA_SERVICE = getWhatsAppUrl("Hello Launchlite, I want a free quote for your services.");
 
 const CheckIcon = () => (
   <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">

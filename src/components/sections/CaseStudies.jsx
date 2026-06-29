@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
-import { ArrowRight } from "lucide-react";
 
 export function CaseStudies() {
   const cases = [

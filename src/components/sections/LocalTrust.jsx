@@ -1,8 +1,6 @@
 import { motion, useInView, animate } from "framer-motion";
-import { Layers, Zap, Award, Users, MapPin, TrendingUp, ArrowRight, MessageCircle, Phone } from "lucide-react";
+import { Layers, Zap, Award, Users, MapPin, TrendingUp } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-
-const WA_URL = "https://wa.me/917350583530?text=Hello%20Launchlite%2C%20I%20want%20to%20discuss%20my%20project.";
 
 const features = [
   {

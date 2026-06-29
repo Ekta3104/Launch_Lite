@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, X, Calendar, User, Tag, Award, Sparkles, ShoppingBag, MapPin, Feather, CheckCircle } from 'lucide-react';
 

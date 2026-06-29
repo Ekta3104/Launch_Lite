@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Check } from "lucide-react";
+import { getWhatsAppUrl } from "../../constants/socialLinks";
 
-const WA_WEBSITE = "https://wa.me/917350583530?text=Hello%20Ekta%20Creation%2C%20I%20am%20interested%20in%20Website%20Development.";
-const WA_APP = "https://wa.me/917350583530?text=Hello%20Ekta%20Creation%2C%20I%20want%20to%20discuss%20a%20Mobile%20App%20idea.";
-const WA_PRINT = "https://wa.me/917350583530?text=Hello%20Ekta%20Creation%2C%20I%20need%20a%20Printing%20Quote.";
+const WA_WEBSITE = getWhatsAppUrl("Hello Launchlite, I am interested in Website Development.");
+const WA_APP = getWhatsAppUrl("Hello Launchlite, I want to discuss a Mobile App idea.");
+const WA_PRINT = getWhatsAppUrl("Hello Launchlite, I need a Printing Quote.");
 
 export function Solutions() {
   const solutions = [

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
-import { ArrowRight, MessageCircle, Phone } from "lucide-react";
-
-const WA_BASE = "https://wa.me/917350583530?text=Hello%20Ekta%20Creation%2C%20I%20am%20interested%20in%20your%20services.";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function FeaturedWork() {
   const [activeTab, setActiveTab] = useState("Digital");
@@ -103,9 +102,9 @@ export function FeaturedWork() {
               </button>
             ))}
           </div>
-          <a href="#portfolio" className="inline-flex items-center gap-2 font-inter font-bold text-[#EA580C] hover:text-[#111827] transition-colors whitespace-nowrap group">
+          <Link to="/portfolio" className="inline-flex items-center gap-2 font-inter font-bold text-[#EA580C] hover:text-[#111827] transition-colors whitespace-nowrap group">
             View All Projects <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </div>
 
         {/* Projects Grid */}

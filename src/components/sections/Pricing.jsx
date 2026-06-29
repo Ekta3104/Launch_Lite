@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { SectionHeading } from "../ui/SectionHeading";
-import { Check, Star, Zap, Clock, MessageCircle, Shield, ChevronDown } from "lucide-react";
+import { Check, MessageCircle, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { getWhatsAppUrl } from "../../constants/socialLinks";
 
 export function Pricing() {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -226,7 +227,7 @@ export function Pricing() {
                   Contact Us
                 </Link>
                 <a 
-                  href="https://wa.me/917350583530" 
+                  href={getWhatsAppUrl("Hello Launchlite, I am looking for a custom solution.")} 
                   target="_blank"
                   rel="noreferrer"
                   className="bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-xl font-outfit font-bold flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:-translate-y-1"

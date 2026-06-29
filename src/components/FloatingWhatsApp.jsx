@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import { getWhatsAppUrl } from "../constants/socialLinks";
 
-const WA_FLOAT = "https://wa.me/917350583530?text=Hello%20Ekta%20Creation%2C%20I%20am%20interested%20in%20your%20services.%20Please%20get%20in%20touch.";
+const WA_FLOAT = getWhatsAppUrl("Hello Launchlite, I am interested in your services. Please get in touch.");
 
 export function FloatingWhatsApp() {
   return (

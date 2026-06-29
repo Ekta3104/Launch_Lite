@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { getWhatsAppUrl } from "../../constants/socialLinks";
 
 const services = ["Website Development", "Mobile Application", "Printing Services", "Branding Design", "Wedding Cards", "Visiting Cards"];
 
@@ -11,8 +12,8 @@ export function QuickInquiryBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name || !phone) return;
-    const msg = encodeURIComponent(`Hello Launchlite! My name is ${name}. Phone: ${phone}. I'm interested in: ${service || "your services"}. Please contact me.`);
-    window.open(`https://wa.me/917350583530?text=${msg}`, "_blank");
+    const msg = `Hello Launchlite! My name is ${name}. Phone: ${phone}. I'm interested in: ${service || "your services"}. Please contact me.`;
+    window.open(getWhatsAppUrl(msg), "_blank");
   };
 
   const inputClass = "w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all font-inter text-sm text-heading placeholder:text-slate-400";

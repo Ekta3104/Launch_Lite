@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 
@@ -39,22 +39,22 @@ export default function Testimonials() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      handleNext();
-    }, 8000);
-    return () => clearInterval(timer);
-  }, [index]);
+  const handleNext = () => {
+    setDirection(1);
+    setIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
 
   const handlePrev = () => {
     setDirection(-1);
     setIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
-  const handleNext = () => {
-    setDirection(1);
-    setIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-  };
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 8000);
+    return () => clearInterval(timer);
+  }, [index]);
 
   const slideVariants = {
     enter: (dir) => ({

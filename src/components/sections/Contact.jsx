@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
-import { Phone, MessageCircle, CheckCircle } from "lucide-react";
+import { Phone, MessageCircle, CheckCircle, AlertCircle } from "lucide-react";
+import { siteConfig } from "../../config/siteConfig";
+import { getWhatsAppUrl } from "../../constants/socialLinks";
+import { validateForm } from "../../utils/validation";
 
-const WA_INQUIRY = "https://wa.me/917350583530?text=Hello%20Ekta%20Creation%2C%20I%20just%20submitted%20an%20inquiry%20form.%20Please%20connect%20with%20me.";
+const WA_INQUIRY = getWhatsAppUrl("Hello Launchlite, I just submitted an inquiry form. Please connect with me.");
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -11,17 +14,53 @@ export function Contact() {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [submitError, setSubmitError] = useState("");
 
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (errors[e.target.name]) {
+      setErrors({ ...errors, [e.target.name]: null });
+    }
+  };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitError("");
+    
+    const validation = validateForm(formData, ["name", "phone", "service", "budget", "details"]);
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      return;
+    }
+
     setLoading(true);
-    // Simulate submission
-    setTimeout(() => {
+    
+    try {
+      const response = await fetch("https://formspree.io/f/xzzpjdvw", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await response.json();
+        if (Object.hasOwn(data, 'errors')) {
+          setSubmitError(data["errors"].map(error => error["message"]).join(", "));
+        } else {
+          setSubmitError("Failed to send message. Please try again.");
+        }
+      }
+    } catch {
+      setSubmitError("A network error occurred. Please try again later.");
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-    }, 1500);
+    }
   };
 
   const inputClass = "w-full px-4 py-3 rounded-lg border border-borderLight bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all font-inter text-sm text-heading placeholder:text-slate-400";
@@ -51,8 +90,8 @@ export function Contact() {
             {/* Contact Details */}
             <div className="flex flex-col gap-4 mb-8">
               {[
-                { icon: Phone, label: "Call / WhatsApp", value: "+91 73505 83530", href: "tel:+917350583530" },
-                { icon: MessageCircle, label: "Email", value: "hello@launchlite.com", href: "mailto:hello@launchlite.com" },
+                { icon: Phone, label: "Call / WhatsApp", value: siteConfig.contact.phoneDisplay, href: `tel:${siteConfig.contact.phone}` },
+                { icon: MessageCircle, label: "Email", value: siteConfig.contact.email, href: `mailto:${siteConfig.contact.email}` },
               ].map(({ icon: Icon, label, value, href }) => (
                 <a key={label} href={href} className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-borderLight hover:border-accent hover:bg-white transition-all group">
                   <div className="w-10 h-10 bg-blue-100 text-secondary rounded-lg flex items-center justify-center">
@@ -70,7 +109,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="font-inter text-xs text-body">Address</p>
-                  <p className="font-outfit font-bold text-heading text-sm">Ahilyanagar, Maharashtra 414003</p>
+                  <p className="font-outfit font-bold text-heading text-sm">{siteConfig.contact.address}</p>
                 </div>
               </div>
             </div>
@@ -127,21 +166,30 @@ export function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="bg-white p-8 md:p-10 rounded-premium shadow-premium border border-borderLight flex flex-col gap-5">
+                {submitError && (
+                  <div className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 flex items-center gap-3">
+                    <AlertCircle size={20} />
+                    <span className="font-inter text-sm">{submitError}</span>
+                  </div>
+                )}
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
                     <label className="font-inter text-sm font-semibold text-heading">Name *</label>
-                    <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} className={inputClass} required />
+                    <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} className={`${inputClass} ${errors.name ? 'border-red-400 ring-red-400 focus:border-red-500' : ''}`} required />
+                    {errors.name && <span className="text-red-500 text-xs font-inter">{errors.name}</span>}
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label className="font-inter text-sm font-semibold text-heading">Phone Number *</label>
-                    <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" value={formData.phone} onChange={handleChange} className={inputClass} required />
+                    <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" value={formData.phone} onChange={handleChange} className={`${inputClass} ${errors.phone ? 'border-red-400 ring-red-400 focus:border-red-500' : ''}`} required />
+                    {errors.phone && <span className="text-red-500 text-xs font-inter">{errors.phone}</span>}
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
                     <label className="font-inter text-sm font-semibold text-heading">Email</label>
-                    <input type="email" name="email" placeholder="you@example.com" value={formData.email} onChange={handleChange} className={inputClass} />
+                    <input type="email" name="email" placeholder="you@example.com" value={formData.email} onChange={handleChange} className={`${inputClass} ${errors.email ? 'border-red-400 ring-red-400 focus:border-red-500' : ''}`} />
+                    {errors.email && <span className="text-red-500 text-xs font-inter">{errors.email}</span>}
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label className="font-inter text-sm font-semibold text-heading">Business Name</label>
@@ -152,7 +200,7 @@ export function Contact() {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5">
                     <label className="font-inter text-sm font-semibold text-heading">Service Required *</label>
-                    <select name="service" value={formData.service} onChange={handleChange} className={inputClass} required>
+                    <select name="service" value={formData.service} onChange={handleChange} className={`${inputClass} ${errors.service ? 'border-red-400' : ''}`} required>
                       <option value="" disabled>Select a service</option>
                       <option value="Website Development">Website Development</option>
                       <option value="Mobile Application">Mobile Application</option>
@@ -163,16 +211,18 @@ export function Contact() {
                       <option value="Branding Design">Branding Design</option>
                       <option value="Other">Other</option>
                     </select>
+                    {errors.service && <span className="text-red-500 text-xs font-inter">{errors.service}</span>}
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label className="font-inter text-sm font-semibold text-heading">Budget Range *</label>
-                    <select name="budget" value={formData.budget} onChange={handleChange} className={inputClass} required>
+                    <select name="budget" value={formData.budget} onChange={handleChange} className={`${inputClass} ${errors.budget ? 'border-red-400' : ''}`} required>
                       <option value="" disabled>Select budget</option>
                       <option value="Under ₹20,000">Under ₹20,000</option>
                       <option value="₹20,000 – ₹50,000">₹20,000 – ₹50,000</option>
                       <option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option>
                       <option value="Above ₹1,00,000">Above ₹1,00,000</option>
                     </select>
+                    {errors.budget && <span className="text-red-500 text-xs font-inter">{errors.budget}</span>}
                   </div>
                 </div>
 
@@ -184,9 +234,10 @@ export function Contact() {
                     placeholder="Tell us about your requirements..."
                     value={formData.details}
                     onChange={handleChange}
-                    className={`${inputClass} resize-none`}
+                    className={`${inputClass} resize-none ${errors.details ? 'border-red-400' : ''}`}
                     required
                   ></textarea>
+                  {errors.details && <span className="text-red-500 text-xs font-inter">{errors.details}</span>}
                 </div>
 
                 <button

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Smartphone, Printer, Palette, Megaphone, Layers, ArrowRight } from 'lucide-react';
 

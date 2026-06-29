@@ -94,7 +94,9 @@ export function DigitalPortfolio() {
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                        className={`w-full h-full group-hover:scale-105 transition-transform duration-700 ${
+                          i === 0 ? "object-contain bg-white" : "object-cover object-top"
+                        }`}
                         loading="lazy"
                       />
                     ) : (

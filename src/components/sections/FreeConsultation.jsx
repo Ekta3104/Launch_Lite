@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle, CalendarCheck, CheckCircle2 } from "lucide-react";
+import { getWhatsAppUrl } from "../../constants/socialLinks";
 
 export function FreeConsultation() {
   const benefits = [
@@ -54,7 +55,7 @@ export function FreeConsultation() {
               Book Free Consultation
             </button>
             <a 
-              href="https://wa.me/917350583530" 
+              href={getWhatsAppUrl("Hello Launchlite, I want a free consultation.")} 
               target="_blank" 
               rel="noreferrer"
               className="flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-5 rounded-xl font-outfit font-bold text-lg transition-all shadow-xl hover:-translate-y-1"

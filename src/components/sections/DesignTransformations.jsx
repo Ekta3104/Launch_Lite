@@ -7,34 +7,31 @@ const ComparisonSlider = ({ beforeLabel, afterLabel, beforeColor, afterColor, ti
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
 
-  const handleMove = (clientX) => {
-    if (!containerRef.current || !isDragging) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-    const percent = Math.max(0, Math.min((x / rect.width) * 100, 100));
-    setSliderPosition(percent);
-  };
-
-  const handleMouseMove = (e) => handleMove(e.clientX);
-  const handleTouchMove = (e) => handleMove(e.touches[0].clientX);
-
   useEffect(() => {
+    const handleMove = (clientX) => {
+      if (!containerRef.current || !isDragging) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+      const percent = Math.max(0, Math.min((x / rect.width) * 100, 100));
+      setSliderPosition(percent);
+    };
+
+    const handleMouseMove = (e) => handleMove(e.clientX);
+    const handleTouchMove = (e) => handleMove(e.touches[0].clientX);
+    const handleEnd = () => setIsDragging(false);
+
     if (isDragging) {
       window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", () => setIsDragging(false));
+      window.addEventListener("mouseup", handleEnd);
       window.addEventListener("touchmove", handleTouchMove, { passive: false });
-      window.addEventListener("touchend", () => setIsDragging(false));
-    } else {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", () => setIsDragging(false));
-      window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("touchend", () => setIsDragging(false));
+      window.addEventListener("touchend", handleEnd);
     }
+
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", () => setIsDragging(false));
+      window.removeEventListener("mouseup", handleEnd);
       window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("touchend", () => setIsDragging(false));
+      window.removeEventListener("touchend", handleEnd);
     };
   }, [isDragging]);
 

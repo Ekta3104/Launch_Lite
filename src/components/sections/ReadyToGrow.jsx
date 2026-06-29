@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
+import { getWhatsAppUrl } from "../../constants/socialLinks";
+import { siteConfig } from "../../config/siteConfig";
 
-const WA_URL = "https://wa.me/917350583530?text=Hello%20Launchlite%2C%20I%20want%20to%20discuss%20my%20project.";
+const WA_URL = getWhatsAppUrl("Hello Launchlite, I want to discuss my project.");
 
 export function ReadyToGrow() {
   return (
@@ -47,7 +49,7 @@ export function ReadyToGrow() {
                 WhatsApp Us
               </a>
               <a
-                href="tel:+917350583530"
+                href={`tel:${siteConfig.contact.phone}`}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-[#0B2A5B] hover:bg-slate-100 font-outfit font-bold text-base transition-all shadow-md hover:-translate-y-1"
               >
                 <Phone className="w-5 h-5" />
