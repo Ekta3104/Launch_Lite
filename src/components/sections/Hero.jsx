@@ -16,25 +16,25 @@ const fadeLeft = { initial: { opacity: 0, x: -40 }, animate: { opacity: 1, x: 0 
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-6 pb-10 lg:pt-10 lg:pb-12 min-h-[480px] lg:min-h-[520px] flex items-center bg-[#FAFBFC]">
+    <section className="relative overflow-hidden pt-4 pb-8 sm:pt-6 sm:pb-10 lg:pt-10 lg:pb-12 min-h-[auto] sm:min-h-[480px] lg:min-h-[520px] flex items-center bg-[#FAFBFC]">
       {/* ── Background Layer (Uncontained Image) ── */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <motion.img
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          src="/hero-printing.png"
+          src="/hero-printing.webp"
           alt="LaunchLite printing studio background"
-          className="w-full h-full object-cover object-center lg:object-right"
+          className="w-full h-full object-cover object-[left_center] sm:object-center lg:object-right"
           loading="eager"
           decoding="sync"
         />
         {/* Overlay to ensure contrast */}
-        <div className="absolute inset-0 bg-white/20 lg:bg-gradient-to-r lg:from-white/20 lg:via-white/30 lg:to-transparent z-0" />
+        <div className="absolute inset-0 bg-white/45 sm:bg-white/30 lg:bg-gradient-to-r lg:from-white/20 lg:via-white/30 lg:to-transparent z-0" />
       </div>
 
       <div className="container-premium relative z-10 w-full">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-6 items-center">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-6 items-center">
 
           {/* ── Left Content ── */}
           <motion.div
@@ -42,33 +42,33 @@ export function Hero() {
             initial="initial"
             animate="animate"
             transition={{ duration: 0.65, ease: "easeOut" }}
-            className="col-span-12 lg:col-span-7 flex flex-col gap-5 pb-4 lg:pb-0"
+            className="col-span-12 lg:col-span-7 flex flex-col gap-4 sm:gap-5 pb-2 sm:pb-4 lg:pb-0 text-center lg:text-left items-center lg:items-start"
           >
             {/* Eyebrow */}
-            <p className="font-outfit font-bold text-[#EA580C] text-sm tracking-widest uppercase">
+            <p className="font-outfit font-bold text-[#EA580C] text-[11px] sm:text-sm tracking-[0.22em] uppercase">
               Digital Solutions. Premium Printing.
             </p>
 
             {/* Heading */}
-            <h1 className="font-outfit font-extrabold text-[#111827] text-3xl md:text-4xl lg:text-[44px] tracking-tight flex flex-col gap-2">
-              <span>Grow Your Business with</span>
-              <span>Smart Digital Solutions &amp;</span>
-              <span className="text-[#EA580C]">Premium Printing</span>
+            <h1 className="font-outfit font-extrabold text-[#111827] text-[clamp(2rem,7vw,2.75rem)] sm:text-4xl lg:text-[44px] tracking-tight leading-[1.05] sm:leading-tight flex flex-col gap-2 sm:gap-2 max-w-[13ch] sm:max-w-none">
+              <span className="block">Grow Your Business with</span>
+              <span className="block">Smart Digital Solutions &amp;</span>
+              <span className="block text-[#EA580C]">Premium Printing</span>
             </h1>
 
             {/* Subtext */}
-            <p className="font-inter text-[#4B5563] text-base md:text-lg leading-relaxed max-w-[500px]">
+            <p className="font-inter text-[#4B5563] text-sm sm:text-base md:text-lg leading-relaxed max-w-[500px]">
               Websites, Branding, Digital Marketing, Printing &amp; More{" "}
               <span className="text-[#111827] font-medium">– All Under One Roof.</span>
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-1">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-1 w-full sm:w-auto justify-center lg:justify-start">
               <a
                 href={WA_HERO}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#EA580C] text-white font-outfit font-bold text-base px-7 py-3.5 rounded-full hover:bg-orange-700 transition-all shadow-lg hover:shadow-orange-500/30 hover:-translate-y-0.5 group"
+                className="inline-flex w-full sm:w-auto justify-center items-center gap-2 bg-[#EA580C] text-white font-outfit font-bold text-sm sm:text-base px-6 sm:px-7 py-3.5 rounded-full hover:bg-orange-700 transition-all shadow-lg hover:shadow-orange-500/30 hover:-translate-y-0.5 group"
               >
                 Get Free Quote
                 <svg
@@ -83,7 +83,7 @@ export function Hero() {
               </a>
               <Link
                 to="/portfolio"
-                className="inline-flex items-center gap-2 border-2 border-[#CBD5E1] text-[#111827] font-outfit font-bold text-base px-7 py-3.5 rounded-full hover:border-[#0B2A5B] hover:text-[#0B2A5B] transition-all bg-white group"
+                className="inline-flex w-full sm:w-auto justify-center items-center gap-2 border-2 border-[#CBD5E1] text-[#111827] font-outfit font-bold text-sm sm:text-base px-6 sm:px-7 py-3.5 rounded-full hover:border-[#0B2A5B] hover:text-[#0B2A5B] transition-all bg-white group"
               >
                 View Our Work
                 <svg
@@ -99,14 +99,14 @@ export function Hero() {
             </div>
 
             {/* Stat Badges */}
-            <div className="flex flex-wrap gap-5 pt-3 border-t border-slate-200/60 mt-2">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-4 gap-y-4 sm:gap-5 pt-3 border-t border-slate-200/60 mt-2 w-full">
               {stats.map((stat, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + i * 0.1, duration: 0.4 }}
-                  className="flex items-center gap-2.5 group"
+                  className="flex items-center gap-2.5 group justify-center sm:justify-start"
                 >
                   <div className="w-9 h-9 rounded-full border border-slate-200 bg-white/80 backdrop-blur-sm flex items-center justify-center group-hover:border-orange-300 group-hover:bg-orange-50 transition-colors">
                     <stat.icon
