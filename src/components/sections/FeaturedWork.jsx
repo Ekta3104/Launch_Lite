@@ -56,7 +56,7 @@ export function FeaturedWork() {
       {
         title: "Corporate Visiting Cards",
         category: "Business Stationery",
-        image: "/service-visiting.png",
+        image: "/service-visiting.webp",
         material: "350 GSM Matte · Spot UV",
         outcome: "Professional matte finish with gloss spots",
       },

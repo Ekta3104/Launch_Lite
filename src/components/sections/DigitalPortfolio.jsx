@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Button } from "../ui/Button";
 import { ExternalLink } from "lucide-react";
-import physioImg from "../../assets/image.png";
-import restImg from "../../assets/rest.png";
-import fashionImg from "../../assets/fasion.png";
-import realEstateImg from "../../assets/Real Estate Portal.png";
-import gymImg from "../../assets/gym.png";
+import physioImg from "../../assets/image.webp";
+import restImg from "../../assets/rest.webp";
+import fashionImg from "../../assets/fasion.webp";
+import realEstateImg from "../../assets/Real Estate Portal.webp";
+import gymImg from "../../assets/gym.webp";
 
 export function DigitalPortfolio() {
   const projects = [
@@ -63,6 +63,7 @@ export function DigitalPortfolio() {
           badge="Our Work"
           title="Digital Projects Portfolio"
           subtitle="Explore our real-world applications that solve complex problems and deliver exceptional user experiences."
+          isPageHeader={true}
         />
 
         <div className="grid lg:grid-cols-2 gap-10">

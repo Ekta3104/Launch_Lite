@@ -28,6 +28,7 @@ export function About() {
               title="Forming Pixels. Crafting Print. Growing Brands."
               centered={false}
               className="mb-2"
+              isPageHeader={true}
             />
              <p className="font-inter text-body text-base leading-relaxed">We combine creativity, technology, and quality printing to deliver solutions that help businesses stand out in today's competitive market.
             </p>
@@ -78,7 +79,7 @@ export function About() {
             {/* Top Bento Item: Design Studio */}
             <div className="relative h-[220px] md:h-[320px] w-full rounded-3xl overflow-hidden border border-slate-200/60 shadow-premium group">
               <img
-                src="/about-studio.png"
+                src="/about-studio.webp"
                 alt="LaunchLite creative design studio"
                 className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                 loading="lazy"
@@ -97,7 +98,7 @@ export function About() {
               {/* Bottom Left: Print Craft */}
               <div className="col-span-12 md:col-span-7 h-[200px] md:h-full relative rounded-3xl overflow-hidden border border-slate-200/60 shadow-premium group">
                 <img
-                  src="/about-print.png"
+                  src="/about-print.webp"
                   alt="LaunchLite premium print craftsmanship"
                   className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                   loading="lazy"
@@ -114,7 +115,7 @@ export function About() {
               {/* Bottom Right: Value Statement / Digital Marketing Bento Card */}
               <div className="col-span-12 md:col-span-5 h-[200px] md:h-full rounded-3xl overflow-hidden border border-slate-200/60 shadow-premium relative group flex flex-col justify-between p-5 text-white">
                 <img
-                  src="/about-marketing.png"
+                  src="/about-marketing.webp"
                   alt="LaunchLite digital marketing analytics"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out z-0"
                   loading="lazy"

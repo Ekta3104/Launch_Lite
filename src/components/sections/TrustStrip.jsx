@@ -68,12 +68,23 @@ export function TrustStrip() {
         transition={{ duration: 0.5 }}
         className="container-premium"
       >
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-x divide-white/10 border-y border-white/10">
-          {features.map((feature, i) => (
-            <div
-              key={i}
-              className="flex flex-col sm:flex-row items-center sm:items-start gap-2.5 px-5 py-5 group hover:bg-white/5 transition-colors"
-            >
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-y border-white/10">
+          {features.map((feature, i) => {
+            const getBorderClasses = (index) => {
+              let classes = "border-white/10 ";
+              classes += (index % 2 === 0) ? "border-r " : "border-r-0 ";
+              classes += (index < 4) ? "border-b " : "border-b-0 ";
+              classes += (index % 3 !== 2) ? "md:border-r " : "md:border-r-0 ";
+              classes += (index < 3) ? "md:border-b " : "md:border-b-0 ";
+              classes += (index !== 5) ? "lg:border-r " : "lg:border-r-0 ";
+              classes += "lg:border-b-0";
+              return classes;
+            };
+            return (
+              <div
+                key={i}
+                className={`flex flex-col sm:flex-row items-center sm:items-start gap-2.5 px-5 py-5 group hover:bg-white/5 transition-colors ${getBorderClasses(i)}`}
+              >
               <div className="w-10 h-10 rounded-full border border-[#EA580C]/40 bg-[#EA580C]/10 flex items-center justify-center flex-shrink-0 text-[#EA580C] group-hover:bg-[#EA580C]/20 transition-colors">
                 {feature.icon}
               </div>
@@ -82,7 +93,8 @@ export function TrustStrip() {
                 <p className="font-inter text-slate-400 text-[11px] mt-0.5 leading-tight">{feature.subtitle}</p>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </motion.div>
     </section>

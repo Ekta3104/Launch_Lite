@@ -98,6 +98,7 @@ export function Pricing() {
             title="Choose the Perfect Package"
             subtitle="Choose the perfect package to grow your business with websites, apps, digital marketing, branding, and printing solutions."
             centered={true}
+            isPageHeader={true}
           />
         </div>
 

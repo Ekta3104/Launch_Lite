@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
-import weddingMock from "../../assets/Weding card mockup.png";
-import brochureMock from "../../assets/Brochermock.png";
-import calendarMock from "../../assets/CalenderMockup.png";
-import displayMock from "../../assets/DisplayMockup.png";
-import flexMock from "../../assets/flexmockup.png";
+import weddingMock from "../../assets/Weding card mockup.webp";
+import brochureMock from "../../assets/Brochermock.webp";
+import calendarMock from "../../assets/CalenderMockup.webp";
+import displayMock from "../../assets/DisplayMockup.webp";
+import flexMock from "../../assets/flexmockup.webp";
 
 export function PrintingShowcase() {
   const prints = [
@@ -18,7 +18,7 @@ export function PrintingShowcase() {
       title: "Corporate Visiting Cards",
       desc: "Matte finish business cards with spot UV",
       color: "bg-slate-800 text-white",
-      image: "/service-visiting.png"
+      image: "/service-visiting.webp"
     },
     {
       title: "Brochure Fold Mockup",

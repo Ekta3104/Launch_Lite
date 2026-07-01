@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { cn } from "../../utils/cn";
 
-export function SectionHeading({ badge, title, subtitle, className, centered = true }) {
+export function SectionHeading({ badge, title, subtitle, className, centered = true, isPageHeader = false }) {
+  const HeadingTag = isPageHeader ? motion.h1 : motion.h2;
+
   return (
     <div className={cn("flex flex-col gap-3 mb-14", centered && "items-center text-center", className)}>
       {badge && (
@@ -15,7 +17,7 @@ export function SectionHeading({ badge, title, subtitle, className, centered = t
         </motion.p>
       )}
       
-      <motion.h2 
+      <HeadingTag 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -23,7 +25,7 @@ export function SectionHeading({ badge, title, subtitle, className, centered = t
         className="text-3xl md:text-4xl lg:text-[44px] font-extrabold font-outfit text-[#111827] leading-tight tracking-tight"
       >
         {title}
-      </motion.h2>
+      </HeadingTag>
       
       {subtitle && (
         <motion.p 

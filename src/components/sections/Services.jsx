@@ -19,7 +19,7 @@ export const digitalServices = [
     icon: PenTool,
     iconColor: "text-indigo-600",
     bgColor: "bg-indigo-50",
-    image: "/service-design.png",
+    image: "/service-design.webp",
     features: ["Custom Logos", "Vector Assets", "Brand Guides", "Source Files"],
     checkColor: "bg-indigo-500",
     buttonColor: "text-indigo-600 hover:text-indigo-700",
@@ -30,7 +30,7 @@ export const digitalServices = [
     icon: Globe,
     iconColor: "text-blue-600",
     bgColor: "bg-blue-50",
-    image: "/service-webdev.png",
+    image: "/service-webdev.webp",
     features: ["SEO Optimized", "Mobile Ready", "High Speed", "Secure Code"],
     checkColor: "bg-blue-500",
     buttonColor: "text-blue-600 hover:text-blue-700",
@@ -41,7 +41,7 @@ export const digitalServices = [
     icon: Megaphone,
     iconColor: "text-rose-600",
     bgColor: "bg-rose-50",
-    image: "/service-social.png",
+    image: "/service-social.webp",
     features: ["Ad Campaigns", "Daily Posts", "Content Plan", "Weekly Reports"],
     checkColor: "bg-rose-500",
     buttonColor: "text-rose-600 hover:text-rose-700",
@@ -52,7 +52,7 @@ export const digitalServices = [
     icon: Tag,
     iconColor: "text-amber-500",
     bgColor: "bg-amber-50",
-    image: "/service-branding.png",
+    image: "/service-branding.webp",
     features: ["Unique Logos", "Color Schemes", "Type Scale", "Stationery Kit"],
     checkColor: "bg-amber-500",
     buttonColor: "text-amber-500 hover:text-amber-600",
@@ -66,7 +66,7 @@ export const printingServices = [
     icon: Contact,
     iconColor: "text-orange-600",
     bgColor: "bg-orange-50",
-    image: "/service-visiting.png",
+    image: "/service-visiting.webp",
     features: ["Premium Quality", "Multiple Finishes", "Fast Delivery", "Affordable Prices"],
     checkColor: "bg-orange-500",
     buttonColor: "text-orange-600 hover:text-orange-700",
@@ -77,7 +77,7 @@ export const printingServices = [
     icon: Presentation,
     iconColor: "text-emerald-600",
     bgColor: "bg-emerald-50",
-    image: "/service-flex.png",
+    image: "/service-flex.webp",
     features: ["Vibrant Colors", "Weather Resistant", "Custom Sizes", "Quick Turnaround"],
     checkColor: "bg-emerald-500",
     buttonColor: "text-[#16A34A] hover:text-emerald-700",
@@ -88,7 +88,7 @@ export const printingServices = [
     icon: Map,
     iconColor: "text-blue-600",
     bgColor: "bg-blue-50",
-    image: "/service-brochure.png",
+    image: "/service-brochure.webp",
     features: ["High Quality Print", "Attractive Designs", "Custom Options", "Bulk Discounts"],
     checkColor: "bg-blue-500",
     buttonColor: "text-blue-600 hover:text-blue-700",
@@ -99,7 +99,7 @@ export const printingServices = [
     icon: Printer,
     iconColor: "text-purple-600",
     bgColor: "bg-purple-50",
-    image: "/service-digital-print.png",
+    image: "/service-digital-print.webp",
     features: ["High Resolution", "Multiple Sizes", "Best Quality", "On-Time Delivery"],
     checkColor: "bg-purple-500",
     buttonColor: "text-purple-600 hover:text-purple-700",
@@ -119,6 +119,7 @@ export function Services() {
           badge="Our Services"
           title="All Your Digital & Printing Needs, Handled with Care"
           subtitle="We bridge the gap between digital innovation and physical branding with our specialized service divisions."
+          isPageHeader={true}
         />
 
         {/* Toggle Switch styling exactly matching screenshot */}

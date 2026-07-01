@@ -4,13 +4,14 @@ import { Menu, X, MapPin, Clock, ChevronDown, ArrowRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { siteConfig } from "../config/siteConfig";
 import { socialLinks, getWhatsAppUrl } from "../constants/socialLinks";
+import { ScrollProgress } from "./ScrollProgress";
 
 const WA_NAV = getWhatsAppUrl("Hello Launchlite, I need a free quote.");
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Services", href: "/services", hasDropdown: true },
+  { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Pricing", href: "/pricing" },
   { name: "Reviews", href: "/#reviews" },
@@ -105,6 +106,7 @@ export function Navbar() {
           scrolled ? "bg-white/97 backdrop-blur-md shadow-md py-2.5" : "bg-white py-3.5"
         }`}
       >
+        <ScrollProgress />
         <div className="container-premium flex items-center justify-between gap-6">
           {/* Logo */}
           <Link to="/" className="flex flex-col leading-none flex-shrink-0">

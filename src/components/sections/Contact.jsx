@@ -85,6 +85,7 @@ export function Contact() {
               subtitle="Fill out the form and we'll get back to you within a few hours."
               centered={false}
               className="mb-10"
+              isPageHeader={true}
             />
 
             {/* Contact Details */}
@@ -157,7 +158,7 @@ export function Contact() {
                     <MessageCircle size={20} /> WhatsApp Us
                   </a>
                   <a
-                    href="tel:+917350583530"
+                    href={`tel:${siteConfig.contact.phone.replace(/\s+/g, "")}`}
                     className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-white rounded-xl font-outfit font-bold hover:bg-blue-900 transition-all shadow-lg hover:-translate-y-1"
                   >
                     <Phone size={20} /> Call Now

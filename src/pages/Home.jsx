@@ -9,7 +9,6 @@ import { ComparisonSection } from "../components/sections/ComparisonSection";
 import { ResultsImpact } from "../components/sections/ResultsImpact";
 import { Reviews } from "../components/sections/Reviews";
 import { FAQ } from "../components/sections/FAQ";
-import { FinalCTA } from "../components/sections/FinalCTA";
 
 export default function Home() {
   return (
@@ -26,7 +25,6 @@ export default function Home() {
       <ResultsImpact />
       { /*<LocalTrust /> */ } {/* This section is now integrated into WhyChooseUs */}
       <FAQ />
-      <FinalCTA />
     </div>
   );
 }

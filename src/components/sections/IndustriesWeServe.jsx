@@ -15,7 +15,7 @@ export function IndustriesWeServe() {
     {
       title: "Retail Stores",
       desc: "Boost your retail sales with engaging branding and robust online storefronts.",
-      image: "/industry-retail.png",
+      image: "/industry-retail.webp",
       features: ["E-Commerce Sites", "Product Packaging", "Flyers & Posters", "Store Branding"],
       checkColor: "bg-indigo-500",
       buttonColor: "text-indigo-600 hover:text-indigo-700",
@@ -23,7 +23,7 @@ export function IndustriesWeServe() {
     {
       title: "Restaurants",
       desc: "Increase orders with digital menu systems, reservation apps, and visual prints.",
-      image: "/industry-restaurant.png",
+      image: "/industry-restaurant.webp",
       features: ["Digital Menus", "Order Web Apps", "Social Creatives", "Branded Packaging"],
       checkColor: "bg-rose-500",
       buttonColor: "text-rose-600 hover:text-rose-700",
@@ -31,7 +31,7 @@ export function IndustriesWeServe() {
     {
       title: "Educational Institutes",
       desc: "Modernize enrollment with prospectus brochures, banner displays, and school portals.",
-      image: "/industry-education.png",
+      image: "/industry-education.webp",
       features: ["School Websites", "Student Portals", "Admission Packets", "Banner Displays"],
       checkColor: "bg-sky-500",
       buttonColor: "text-sky-600 hover:text-sky-700",
@@ -39,7 +39,7 @@ export function IndustriesWeServe() {
     {
       title: "Medical Clinics",
       desc: "Improve patient experience with booking portals, clinic sites, and custom materials.",
-      image: "/industry-medical.png",
+      image: "/industry-medical.webp",
       features: ["Booking Portals", "Clinic Websites", "Patient Forms", "Professional Cards"],
       checkColor: "bg-blue-500",
       buttonColor: "text-blue-600 hover:text-blue-700",
@@ -47,7 +47,7 @@ export function IndustriesWeServe() {
     {
       title: "Startups",
       desc: "Scale fast with high-performance SaaS landing pages, MVPs, and modern brand assets.",
-      image: "/industry-startup.png",
+      image: "/industry-startup.webp",
       features: ["MVP Development", "SaaS Landing Pages", "Pitch Decks", "Modern Branding"],
       checkColor: "bg-purple-500",
       buttonColor: "text-purple-600 hover:text-purple-700",
@@ -55,7 +55,7 @@ export function IndustriesWeServe() {
     {
       title: "Small Businesses",
       desc: "Grow your local footprint with SEO optimized websites and tactile visiting cards.",
-      image: "/industry-smallbiz.png",
+      image: "/industry-smallbiz.webp",
       features: ["Local SEO Sites", "Visiting Cards", "Flyer Campaigns", "Logo Creation"],
       checkColor: "bg-orange-500",
       buttonColor: "text-orange-600 hover:text-orange-700",
@@ -63,7 +63,7 @@ export function IndustriesWeServe() {
     {
       title: "Event Organizers",
       desc: "Draw crowds with premium invitations, flex banners, and event landing pages.",
-      image: "/industry-events.png",
+      image: "/industry-events.webp",
       features: ["Invitation Cards", "Flex & Banners", "Event Websites", "Lanyard & Badges"],
       checkColor: "bg-emerald-500",
       buttonColor: "text-[#16A34A] hover:text-emerald-700",
@@ -71,7 +71,7 @@ export function IndustriesWeServe() {
     {
       title: "E-Commerce",
       desc: "Sell 24/7 with smooth shopping carts, payment APIs, and social marketing ads.",
-      image: "/industry-ecommerce.png",
+      image: "/industry-ecommerce.webp",
       features: ["Online Storefronts", "Payment Setups", "Social Media Ads", "Invoice Layouts"],
       checkColor: "bg-amber-500",
       buttonColor: "text-amber-500 hover:text-amber-600",

@@ -47,26 +47,7 @@ export function Reviews() {
       avatar: "A",
       color: "bg-indigo-600",
     },
-    {
-      name: "Suresh Deshmukh",
-      date: "3 months ago",
-      category: "Website",
-      service: "Management System",
-      text: "They developed a complete employee management system for our factory. The system handles attendance, payroll summaries, and leave management. It's reliable, easy to use, and saved us hours every week.",
-      rating: 5,
-      avatar: "S",
-      color: "bg-teal-600",
-    },
-    {
-      name: "Neha Gaikwad",
-      date: "1 month ago",
-      category: "App",
-      service: "Android Application",
-      text: "Ordered a custom Android app for our food business. The ordering flow is seamless, the UI is clean, and customers love using it. Launchlite delivered exactly what we discussed, on time and within budget.",
-      rating: 5,
-      avatar: "N",
-      color: "bg-orange-600",
-    },
+        
   ];
 
   const categories = ["All", "Printing", "Website", "App"];
